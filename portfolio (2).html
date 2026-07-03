@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avani Mandya — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --void:#04060a;
+  --deep:#080c14;
+  --layer:#0d1220;
+  --frost:#e8f4f8;
+  --gold:#c8923a;
+  --gold2:#e8b060;
+  --jade:#2a7a5a;
+  --jade2:#3aaa7a;
+  --crimson:#8a1a2a;
+  --crimson2:#c42a3a;
+  --slate:#3a5a7a;
+  --slate2:#5a8aaa;
+  --text:#b8c8d8;
+  --muted:#4a5a6a;
+  --border:#1a2a3a;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:'Space Grotesk',sans-serif;
+  background:var(--void);
+  color:var(--text);
+  overflow-x:hidden;
+  cursor:default;
+}
+
+/* ── STAR FIELD ── */
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:var(--a);transform:scale(1)}50%{opacity:calc(var(--a)*0.3);transform:scale(0.8)}}
+
+/* ── HERO ── */
+#hero{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:2rem;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 50%,rgba(42,122,90,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 30%,rgba(138,26,42,0.07) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 80%,rgba(58,90,122,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 70% 30% at 50% 0%,rgba(200,146,58,0.06) 0%,transparent 50%);
+  animation:heroshift 15s ease-in-out infinite alternate;
+}
+@keyframes heroshift{from{opacity:0.8}to{opacity:1}}
+
+/* horizontal dividing lines */
+.hero-lines{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(0deg,transparent 49.5%,rgba(200,146,58,0.06) 49.5%,rgba(200,146,58,0.06) 50.5%,transparent 50.5%);
+  pointer-events:none;
+}
+
+.eyebrow{
+  font-size:0.62rem;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.5rem;
+  opacity:0.7;
+  position:relative;z-index:1;
+}
+
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,10vw,8rem);
+  font-weight:300;
+  color:#fff;
+  text-align:center;
+  line-height:0.9;
+  letter-spacing:-2px;
+  position:relative;z-index:1;
+  margin-bottom:0.5rem;
+}
+
+.hero-name em{
+  font-style:italic;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(200,146,58,0.6);
+}
+
+.hero-tagline{
+  font-size:0.8rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:center;
+  margin-bottom:3rem;
+  position:relative;z-index:1;
+  line-height:2;
+}
+
+.hero-tagline span{color:var(--text);opacity:0.6}
+.hero-tagline span::after{content:' · '}
+.hero-tagline span:last-child::after{content:''}
+
+.scroll-hint{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;
+  align-items:center;gap:8px;
+  font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--muted);
+  animation:bounce 2s ease-in-out infinite;
+}
+.scroll-hint::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,var(--muted),transparent)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ── PROJECTS ── */
+#projects{
+  position:relative;z-index:1;
+  padding:6rem 2rem;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.section-label{
+  font-size:0.6rem;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* project cards — each one is unique */
+.projects-grid{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.proj{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border);
+  transition:border-color 0.3s;
+  cursor:pointer;
+  text-decoration:none;
+  display:block;
+}
+.proj:hover{border-color:var(--accent)}
+
+.proj-inner{
+  padding:2.5rem 2.5rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;
+  align-items:end;
+  position:relative;
+  z-index:1;
+  transition:background 0.3s;
+}
+
+.proj-bg{
+  position:absolute;inset:0;
+  opacity:0;
+  transition:opacity 0.4s;
+}
+.proj:hover .proj-bg{opacity:1}
+
+.proj-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5rem;
+  font-weight:300;
+  line-height:1;
+  position:absolute;
+  right:2rem;top:1rem;
+  opacity:0.04;
+  transition:opacity 0.3s,transform 0.3s;
+  color:#fff;
+  pointer-events:none;
+}
+.proj:hover .proj-num{opacity:0.08;transform:scale(1.05)}
+
+.proj-eyebrow{
+  font-size:0.58rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:0.6rem;
+  transition:color 0.3s;
+}
+
+.proj-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:300;
+  color:#fff;
+  line-height:1.1;
+  margin-bottom:0.75rem;
+  letter-spacing:-0.5px;
+}
+
+.proj-title em{font-style:italic}
+
+.proj-desc{
+  font-size:0.82rem;
+  line-height:1.8;
+  color:var(--muted);
+  max-width:520px;
+  margin-bottom:1.2rem;
+}
+
+.proj-tags{
+  display:flex;flex-wrap:wrap;gap:6px;
+}
+
+.proj-tag{
+  font-size:0.6rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:3px 10px;
+  border:1px solid;
+  border-radius:1px;
+}
+
+.proj-arrow{
+  font-size:1.5rem;
+  color:var(--muted);
+  transition:all 0.3s;
+  align-self:center;
+  flex-shrink:0;
+}
+.proj:hover .proj-arrow{transform:translate(4px,-4px)}
+
+/* ── CARD 1: IMPOSTER — dark neon ── */
+.proj-1{--accent:rgba(0,200,220,0.4)}
+.proj-1 .proj-bg{background:linear-gradient(135deg,rgba(0,150,180,0.06) 0%,transparent 60%)}
+.proj-1 .proj-eyebrow{color:#00c8dc}
+.proj-1 .proj-tag{color:#00c8dc;border-color:rgba(0,200,220,0.3);background:rgba(0,200,220,0.05)}
+.proj-1:hover .proj-arrow{color:#00c8dc}
+
+/* ── CARD 2: ARAIMANDI — warm terracotta ── */
+.proj-2{--accent:rgba(200,146,58,0.4)}
+.proj-2 .proj-bg{background:linear-gradient(135deg,rgba(200,100,40,0.07) 0%,transparent 60%)}
+.proj-2 .proj-eyebrow{color:var(--gold2)}
+.proj-2 .proj-tag{color:var(--gold2);border-color:rgba(200,146,58,0.3);background:rgba(200,146,58,0.05)}
+.proj-2:hover .proj-arrow{color:var(--gold2)}
+
+/* ── CARD 3: LAWYER — deep jade ── */
+.proj-3{--accent:rgba(42,170,100,0.4)}
+.proj-3 .proj-bg{background:linear-gradient(135deg,rgba(30,120,70,0.07) 0%,transparent 60%)}
+.proj-3 .proj-eyebrow{color:var(--jade2)}
+.proj-3 .proj-tag{color:var(--jade2);border-color:rgba(42,170,100,0.3);background:rgba(42,170,100,0.05)}
+.proj-3:hover .proj-arrow{color:var(--jade2)}
+
+/* ── CARD 4: DIGITAL EXECUTOR — crimson ── */
+.proj-4{--accent:rgba(180,60,80,0.4)}
+.proj-4 .proj-bg{background:linear-gradient(135deg,rgba(140,30,50,0.07) 0%,transparent 60%)}
+.proj-4 .proj-eyebrow{color:#e05070}
+.proj-4 .proj-tag{color:#e05070;border-color:rgba(180,60,80,0.3);background:rgba(180,60,80,0.05)}
+.proj-4:hover .proj-arrow{color:#e05070}
+
+/* ── ABOUT ── */
+#about{
+  position:relative;z-index:1;
+  padding:4rem 2rem 6rem;
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+  border-top:1px solid var(--border);
+}
+
+.about-label{
+  font-size:0.6rem;letter-spacing:5px;text-transform:uppercase;color:var(--muted);
+  margin-bottom:1.5rem;
+}
+
+.about-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:300;
+  color:#fff;line-height:1.6;
+  font-style:italic;
+}
+
+.about-text strong{font-style:normal;color:var(--gold2)}
+
+.about-details{
+  display:flex;flex-direction:column;gap:1.2rem;
+}
+
+.about-detail{
+  padding:1rem 1.2rem;
+  border:1px solid var(--border);
+  border-left:2px solid var(--gold);
+  background:rgba(200,146,58,0.03);
+}
+
+.about-detail-label{
+  font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:4px;
+}
+
+.about-detail-val{font-size:0.88rem;color:var(--text)}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  padding:2rem;
+  text-align:center;
+  border-top:1px solid var(--border);
+  font-size:0.7rem;
+  color:var(--muted);
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .proj-inner{grid-template-columns:1fr;gap:1rem}
+  .proj-arrow{display:none}
+  #about{grid-template-columns:1fr}
+  .hero-name{font-size:clamp(2.8rem,14vw,5rem)}
+}
+</style>
+</head>
+<body>
+
+<div id="stars"></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <h1 class="hero-name">Avani<br><em>Mandya</em></h1>
+  <div class="scroll-hint">Explore projects</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+  <div class="projects-grid">
+
+    <!-- 1: IMPOSTER -->
+    <a class="proj proj-1" href="https://avani-mandya.github.io/imposter-game" target="_blank">
+      <div class="proj-bg"></div>
+      <div class="proj-num">01</div>
+      <div class="proj-inner">
+        <div>
+          <div class="proj-eyebrow">Social Deduction · Conversational AI</div>
+          <div class="proj-title">Who Is The <em>Imposter?</em></div>
+          <div class="proj-desc">A multiplayer AI interrogation game where players question four AI suspects — one secretly guilty — to deduce the imposter. Each character has a unique personality, private backstory, and responds dynamically to any question.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Gemini API</span>
+            <span class="proj-tag">Multiplayer</span>
+            <span class="proj-tag">Vanilla JS</span>
+            <span class="proj-tag">GitHub Pages</span>
+          </div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+    </a>
+
+    <!-- 2: ARAIMANDI -->
+    <a class="proj proj-2" href="https://avani-mandya.github.io/araimandi/" target="_blank">
+      <div class="proj-bg"></div>
+      <div class="proj-num">02</div>
+      <div class="proj-inner">
+        <div>
+          <div class="proj-eyebrow">Computer Vision · Dance Technology</div>
+          <div class="proj-title"><em>Araimandi</em> Posture Corrector</div>
+          <div class="proj-desc">A real-time posture correction tool for Bharatanatyam dancers that uses MediaPipe pose estimation to detect and score the Araimandi stance — the foundational half-sit position of classical Indian dance.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">MediaPipe</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Computer Vision</span>
+            <span class="proj-tag">Dance AI</span>
+          </div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+    </a>
+
+    <!-- 3: LAWYER -->
+    <a class="proj proj-3" href="https://lawyerai-dv3pvtf3egaeuvrzyns7bd.streamlit.app/" target="_blank">
+      <div class="proj-bg"></div>
+      <div class="proj-num">03</div>
+      <div class="proj-inner">
+        <div>
+          <div class="proj-eyebrow">Legal AI · RAG Pipeline</div>
+          <div class="proj-title">Lawyer <em>AI</em></div>
+          <div class="proj-desc">An AI-powered legal assistant for Indian bail applications, built on a RAG pipeline over Indian Kanoon judgments. Uses LangGraph and FAISS to retrieve and reason over real case law, making legal guidance accessible to those who can't afford representation.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">LangGraph</span>
+            <span class="proj-tag">FAISS</span>
+            <span class="proj-tag">RAG</span>
+            <span class="proj-tag">Streamlit</span>
+            <span class="proj-tag">Legal Tech</span>
+          </div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+    </a>
+
+    <!-- 4: DIGITAL EXECUTOR -->
+    <a class="proj proj-4" href="https://avani-mandya.github.io/digital-executor/" target="_blank">
+      <div class="proj-bg"></div>
+      <div class="proj-num">04</div>
+      <div class="proj-inner">
+        <div>
+          <div class="proj-eyebrow">Digital Legacy · End-of-Life Planning</div>
+          <div class="proj-title">Digital <em>Executor</em></div>
+          <div class="proj-desc">A tool that helps people plan and manage their digital legacy — organising online accounts, assets, and final wishes so loved ones aren't left navigating the digital world alone after someone passes.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Digital Legacy</span>
+            <span class="proj-tag">Privacy</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">GitHub Pages</span>
+          </div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="about-label">About</div>
+    <div class="about-text">
+      Building at the intersection of <strong>AI, law, art,</strong> and human experience.
+    </div>
+  </div>
+  <div class="about-details">
+    <div class="about-detail">
+      <div class="about-detail-label">Education</div>
+      <div class="about-detail-val">B.Tech Computer Science · PES University, Bangalore</div>
+    </div>
+    <div class="about-detail">
+      <div class="about-detail-label">Focus Areas</div>
+      <div class="about-detail-val">Machine Learning · Legal Tech · Computer Vision · Conversational AI</div>
+    </div>
+    <div class="about-detail">
+      <div class="about-detail-label">GitHub</div>
+      <div class="about-detail-val">github.com/avani-mandya</div>
+    </div>
+  </div>
+</section>
+
+<footer>◈ Avani Mandya · All Projects Built with Code & Curiosity ◈</footer>
+
+<script>
+// Generate stars
+const container = document.getElementById('stars');
+for(let i = 0; i < 120; i++){
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() * 1.5 + 0.5;
+  s.style.cssText = `
+    width:${size}px;height:${size}px;
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    --a:${Math.random()*0.5+0.1};
+    --d:${Math.random()*4+2}s;
+    animation-delay:${Math.random()*4}s;
+  `;
+  container.appendChild(s);
+}
+</script>
+</body>
+</html>
