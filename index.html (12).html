@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avani Kanchi Mandya</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;
+  --bg2:#111111;
+  --bg3:#181818;
+  --gold:#c8923a;
+  --gold2:#e8b060;
+  --text:#d0d0d0;
+  --muted:#666;
+  --border:#222;
+  --white:#f5f5f5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#333}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.2rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,10,10,0.9);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;color:var(--white);letter-spacing:1px;
+}
+.nav-name em{font-style:italic;color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{
+  font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--white)}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:8rem 3rem 4rem;
+  gap:4rem;
+  max-width:1200px;
+  margin:0 auto;
+}
+.hero-left{}
+.hero-tag{
+  font-size:0.62rem;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;
+}
+.hero-tag::before{content:'';width:30px;height:1px;background:var(--gold)}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,5vw,5.5rem);
+  font-weight:300;color:var(--white);
+  line-height:1;letter-spacing:-1px;
+  margin-bottom:1.2rem;
+}
+.hero-name em{font-style:italic;color:var(--gold);display:block}
+.hero-intro{
+  font-size:0.9rem;line-height:1.9;color:var(--muted);
+  margin-bottom:2rem;max-width:440px;
+}
+.hero-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1rem;
+  color:rgba(200,146,58,0.55);
+  border-left:2px solid rgba(200,146,58,0.3);
+  padding-left:1rem;
+  line-height:1.7;
+  margin-bottom:2rem;
+}
+.hero-quote cite{
+  display:block;font-style:normal;
+  font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);margin-top:0.4rem;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-outline{
+  padding:10px 24px;
+  border:1px solid var(--border);
+  font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:all 0.2s;
+  display:inline-block;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{
+  padding:10px 24px;
+  background:var(--gold);border:1px solid var(--gold);
+  font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;
+  color:#000;text-decoration:none;transition:all 0.2s;
+  display:inline-block;font-weight:500;
+}
+.btn-gold:hover{background:var(--gold2);border-color:var(--gold2)}
+
+.hero-right{
+  display:flex;justify-content:center;align-items:center;
+}
+.hero-photo-wrap{
+  position:relative;width:380px;max-width:100%;
+}
+.hero-photo-wrap::before{
+  content:'';
+  position:absolute;
+  top:16px;left:16px;right:-16px;bottom:-16px;
+  border:1px solid rgba(200,146,58,0.25);
+  z-index:0;
+}
+.hero-photo{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:top;
+  position:relative;z-index:1;
+  filter:grayscale(20%);
+  transition:filter 0.3s;
+}
+.hero-photo:hover{filter:grayscale(0%)}
+.hero-photo-placeholder{
+  width:100%;aspect-ratio:3/4;
+  background:var(--bg3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;
+  color:var(--muted);font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;
+}
+
+/* DIVIDER */
+.divider{
+  max-width:1200px;margin:0 auto;
+  border:none;border-top:1px solid var(--border);
+}
+
+/* SECTIONS */
+.section{padding:5rem 3rem;max-width:1200px;margin:0 auto}
+.sec-label{
+  font-size:0.6rem;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.75rem;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:300;color:var(--white);
+  margin-bottom:0.5rem;line-height:1.1;
+}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-desc{font-size:0.85rem;color:var(--muted);line-height:1.8;max-width:600px;margin-bottom:3rem}
+
+/* ACTIVITY CARDS */
+.activity-grid{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.act-card{
+  background:var(--bg);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;
+  transition:background 0.2s;
+}
+.act-card:hover{background:var(--bg2)}
+.act-card.reverse{direction:rtl}
+.act-card.reverse>*{direction:ltr}
+.act-content{
+  padding:3rem;
+  display:flex;flex-direction:column;
+  justify-content:center;
+}
+.act-cat{
+  font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:0.75rem;
+}
+.act-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:300;
+  color:var(--white);margin-bottom:0.75rem;line-height:1.2;
+}
+.act-title em{font-style:italic}
+.act-desc{font-size:0.82rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem}
+.act-photo{
+  aspect-ratio:4/3;
+  object-fit:cover;
+  width:100%;height:100%;
+}
+.act-photo-placeholder{
+  aspect-ratio:4/3;
+  background:var(--bg3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;
+  border-left:1px solid var(--border);
+}
+.act-card.reverse .act-photo-placeholder{border-left:none;border-right:1px solid var(--border)}
+
+/* PROJECTS */
+.projects-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--border);
+}
+.proj-card{
+  background:var(--bg);
+  padding:2.5rem;
+  text-decoration:none;
+  display:block;
+  transition:background 0.2s;
+  position:relative;
+  overflow:hidden;
+}
+.proj-card::after{
+  content:'↗';
+  position:absolute;top:1.5rem;right:1.5rem;
+  font-size:1rem;color:var(--muted);
+  transition:all 0.2s;
+}
+.proj-card:hover{background:var(--bg2)}
+.proj-card:hover::after{color:var(--gold);transform:translate(2px,-2px)}
+.proj-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.75rem;color:var(--muted);
+  letter-spacing:3px;margin-bottom:1.5rem;
+}
+.proj-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:300;
+  color:var(--white);margin-bottom:0.5rem;line-height:1.2;
+}
+.proj-name em{font-style:italic}
+.proj-type{
+  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:0.85rem;
+}
+.proj-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px}
+.proj-tag{
+  font-size:0.58rem;letter-spacing:1px;text-transform:uppercase;
+  padding:3px 9px;border:1px solid var(--border);color:var(--muted);
+}
+
+/* VOLUNTEERING */
+.vol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.vol-card{
+  background:var(--bg);padding:2.5rem;
+  transition:background 0.2s;
+}
+.vol-card:hover{background:var(--bg2)}
+.vol-icon{font-size:1.8rem;margin-bottom:1rem}
+.vol-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:0.5rem;
+}
+.vol-title em{font-style:italic}
+.vol-desc{font-size:0.78rem;color:var(--muted);line-height:1.7}
+.vol-cat{
+  font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.5rem;
+}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.skill-block{background:var(--bg);padding:2rem}
+.skill-label{
+  font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.skill-items{display:flex;flex-direction:column;gap:8px}
+.skill-item{
+  font-size:0.82rem;color:var(--muted);
+  display:flex;align-items:center;gap:8px;
+}
+.skill-item::before{content:'—';color:var(--border)}
+
+/* CONTACT */
+#contact{
+  padding:5rem 3rem;max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.contact-left .sec-title{margin-bottom:1rem}
+.contact-left p{font-size:0.85rem;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:10px}
+.contact-link{
+  display:flex;align-items:center;gap:12px;
+  font-size:0.82rem;color:var(--muted);text-decoration:none;
+  padding:12px 16px;border:1px solid var(--border);
+  transition:all 0.2s;
+}
+.contact-link:hover{border-color:var(--gold);color:var(--gold)}
+.contact-link-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.contact-link-val{font-size:0.88rem;color:var(--white)}
+.contact-right{
+  background:var(--bg2);border:1px solid var(--border);padding:2.5rem;
+}
+.contact-right h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:1.5rem;
+}
+.form-group{margin-bottom:1.2rem}
+.form-group label{
+  display:block;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+}
+.form-group input,.form-group textarea{
+  width:100%;background:var(--bg);border:1px solid var(--border);
+  padding:10px 14px;font-family:'Inter',sans-serif;font-size:0.82rem;
+  color:var(--white);outline:none;transition:border-color 0.2s;resize:vertical;
+}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted)}
+.form-submit{
+  width:100%;background:var(--gold);border:none;
+  padding:12px;font-family:'Inter',sans-serif;
+  font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:#000;cursor:pointer;font-weight:500;transition:background 0.2s;
+}
+.form-submit:hover{background:var(--gold2)}
+
+/* FOOTER */
+footer{
+  padding:2rem 3rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;gap:2.5rem}
+  .hero-right{order:-1}
+  .hero-photo-wrap{width:280px}
+  .act-card{grid-template-columns:1fr}
+  .act-card.reverse{direction:ltr}
+  .act-photo-placeholder,.act-photo{aspect-ratio:16/9}
+  .projects-grid{grid-template-columns:1fr}
+  .vol-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  #contact{grid-template-columns:1fr}
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .section{padding:3rem 1.5rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+
+/* COLOR ACCENTS PER ACTIVITY */
+.act-sport .act-cat{color:#00c8dc}
+.act-dance .act-cat{color:#e8b060}
+.act-school .act-cat{color:#3aaa7a}
+.act-sport .act-card-accent{background:rgba(0,200,220,0.05)}
+
+/* PROJ COLORS */
+.p1 .proj-type{color:#00c8dc}
+.p2 .proj-type{color:#e8b060}
+.p3 .proj-type{color:#3aaa7a}
+.p4 .proj-type{color:#e05070}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Avani <em>Kanchi Mandya</em></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#activities">Activities</a>
+    <a href="#projects">Projects</a>
+    <a href="#volunteering">Volunteering</a>
+    <a href="#cultural">Cultural</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Grade 12 · KHPS Base PU College, Bangalore</div>
+    <h1 class="hero-name">
+      Avani
+      <em>Kanchi Mandya</em>
+    </h1>
+    <p class="hero-intro">
+      I'm a student passionate about Artificial Intelligence and its power to solve real problems. From building AI apps to performing Bharatanatyam on stage, I bring the same curiosity and dedication to everything I do.
+    </p>
+    <div class="hero-quote">
+      In every walk with nature, one receives far more than he seeks.
+      <cite>— John Muir</cite>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-gold">View Projects</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="profile.jpg" alt="Avani Kanchi Mandya" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-photo-placeholder" style="display:none">Upload profile.jpg</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="sec-label">About Me</div>
+  <div class="sec-title">Code, <em>Dance</em> &<br>Everything In Between</div>
+  <div class="sec-desc">
+    I'm Avani Kanchi Mandya, a 12th grade student from Bangalore with a deep passion for Artificial Intelligence. I believe technology becomes most powerful when it's built with empathy — whether that's making legal aid accessible, helping dancers perfect their posture, or preserving digital legacies. Outside of code, I'm a Bharatanatyam dancer, an avid reader, and a track and field athlete.
+  </div>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <div class="skill-label">Future Plans</div>
+      <div class="skill-items">
+        <div class="skill-item">Pursue a degree in Computer Science with a focus on Artificial Intelligence</div>
+        <div class="skill-item">Build technology that creates meaningful social impact</div>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-label">Languages</div>
+      <div class="skill-items">
+        <div class="skill-item">English</div>
+        <div class="skill-item">Kannada</div>
+        <div class="skill-item">Hindi</div>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-label">Interests</div>
+      <div class="skill-items">
+        <div class="skill-item">Bharatanatyam</div>
+        <div class="skill-item">Reading</div>
+        <div class="skill-item">Athletics</div>
+        <div class="skill-item">Artificial Intelligence</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ACTIVITIES -->
+<div class="section" id="activities">
+  <div class="sec-label">Activities</div>
+  <div class="sec-title">Beyond the <em>Classroom</em></div>
+  <div class="sec-desc">From the athletics track to the classical dance stage, here's a glimpse of my life outside academics.</div>
+</div>
+
+<div class="activity-grid" style="max-width:1200px;margin:0 auto 0">
+
+  <!-- SPORTS -->
+  <div class="act-card act-sport">
+    <div class="act-content">
+      <div class="act-cat" style="color:#00c8dc">Athletics · Sports Day</div>
+      <div class="act-title">Javelin Throw, Shot Put <em>& Basketball</em></div>
+      <div class="act-desc">Competed in track and field events representing my college on Sports Day — including Javelin Throw, Shot Put, and Basketball. Athletics has taught me discipline, focus, and the value of pushing past limits.</div>
+    </div>
+    <img src="sports.jpg" alt="Sports Day" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="act-photo-placeholder" style="display:none">Upload sports.jpg</div>
+  </div>
+
+  <!-- DANCE PERFORMANCE -->
+  <div class="act-card act-dance reverse">
+    <div class="act-content">
+      <div class="act-cat" style="color:#e8b060">Performing Arts · Community Service</div>
+      <div class="act-title">Bharatanatyam <em>at an Old Age Home</em></div>
+      <div class="act-desc">Performed Bharatanatyam as part of a community service initiative at a local old age home, bringing joy to elderly residents through classical Indian dance. A deeply meaningful experience that reinforced how art transcends age and language.</div>
+    </div>
+    <img src="dance.jpg" alt="Bharatanatyam Performance" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="act-photo-placeholder" style="display:none">Upload dance.jpg</div>
+  </div>
+
+  <!-- TEACHING -->
+  <div class="act-card act-school">
+    <div class="act-content">
+      <div class="act-cat" style="color:#3aaa7a">Education · Outreach</div>
+      <div class="act-title">Teaching at a School <em>in Melkote</em></div>
+      <div class="act-desc">Visited a government school in Melkote to teach and interact with students, donating books and learning materials. Contributing to educational outreach in an underserved community was one of the most rewarding experiences of my life.</div>
+    </div>
+    <img src="melkote.jpg" alt="Teaching in Melkote" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="act-photo-placeholder" style="display:none">Upload melkote.jpg</div>
+  </div>
+
+  <!-- TEACHING 2 -->
+  <div class="act-card act-school reverse">
+    <div class="act-content">
+      <div class="act-cat" style="color:#3aaa7a">Education · Outreach</div>
+      <div class="act-title">Inside the <em>Classroom</em></div>
+      <div class="act-desc">Engaging directly with students inside the classroom — sharing books, interacting one on one, and inspiring curiosity in children from underserved communities.</div>
+    </div>
+    <img src="melkote2.jpg" alt="Inside classroom in Melkote" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="act-photo-placeholder" style="display:none">Upload melkote2.jpg</div>
+  </div>
+
+  <!-- DANCE 2 -->
+  <div class="act-card act-dance">
+    <div class="act-content">
+      <div class="act-cat" style="color:#e8b060">Performing Arts · Community</div>
+      <div class="act-title">Performing for the <em>Elderly</em></div>
+      <div class="act-desc">Brought joy to the residents of a local old age home through Bharatanatyam — a reminder that classical dance is not just an art form, but a language of connection that transcends age.</div>
+    </div>
+    <img src="dance2.jpg" alt="Audience at old age home" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="act-photo-placeholder" style="display:none">Upload dance2.jpg</div>
+  </div>
+
+</div>
+
+<hr class="divider" style="margin-top:0">
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="sec-label">Projects</div>
+  <div class="sec-title">Things I've <em>Built</em></div>
+  <div class="sec-desc">Each of these projects was built to solve a real problem — from legal accessibility to classical dance, AI to digital legacy.</div>
+  <div class="projects-grid">
+
+    <a class="proj-card p1" href="https://avani-mandya.github.io/imposter-game/" target="_blank">
+      <div class="proj-num">01 / 04</div>
+      <div class="proj-type">Social Deduction · AI Game</div>
+      <div class="proj-name">Who Is The <em>Imposter?</em></div>
+      <div class="proj-desc">A multiplayer AI interrogation game where players question four AI suspects — one secretly guilty — to identify the imposter. Each character has a unique personality and responds dynamically to any question.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">Gemini API</span>
+        <span class="proj-tag">JavaScript</span>
+        <span class="proj-tag">Multiplayer</span>
+      </div>
+    </a>
+
+    <a class="proj-card p2" href="https://avani-mandya.github.io/araimandi/" target="_blank">
+      <div class="proj-num">02 / 04</div>
+      <div class="proj-type">Computer Vision · Dance Tech</div>
+      <div class="proj-name"><em>Araimandi</em> Posture Corrector</div>
+      <div class="proj-desc">A real-time posture correction tool using MediaPipe to detect and score the Araimandi stance — the foundational half-sit position in Bharatanatyam. Built to help dancers perfect their form using AI.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">MediaPipe</span>
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">Computer Vision</span>
+      </div>
+    </a>
+
+    <a class="proj-card p3" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">
+      <div class="proj-num">03 / 04</div>
+      <div class="proj-type">Legal AI · Practice Tool</div>
+      <div class="proj-name">Lawyer <em>AI</em></div>
+      <div class="proj-desc">An AI-powered tool that helps lawyers prepare and practice cases by simulating arguments, analysing case details, and providing legal insights — built during an internship at a law firm.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">AI</span>
+        <span class="proj-tag">Legal Tech</span>
+        <span class="proj-tag">JavaScript</span>
+      </div>
+    </a>
+
+    <a class="proj-card p4" href="https://avani-mandya.github.io/digital-executor/" target="_blank">
+      <div class="proj-num">04 / 04</div>
+      <div class="proj-type">Digital Legacy · Privacy</div>
+      <div class="proj-name">Digital <em>Executor</em></div>
+      <div class="proj-desc">A tool that helps individuals identify and delete old unwanted digital files and organise their online accounts and assets — ensuring loved ones aren't left navigating the digital world alone.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">JavaScript</span>
+        <span class="proj-tag">Privacy</span>
+        <span class="proj-tag">Digital Legacy</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- VOLUNTEERING -->
+<div class="section" id="volunteering">
+  <div class="sec-label">Volunteering</div>
+  <div class="sec-title">Giving <em>Back</em></div>
+  <div class="sec-desc">Community service has been as much a part of my journey as academics and projects.</div>
+  <div class="vol-grid">
+
+    <div class="vol-card">
+      <div class="vol-icon">🌟</div>
+      <div class="vol-cat">College · Event Management</div>
+      <div class="vol-title">Freshers Day <em>Volunteer</em></div>
+      <div class="vol-desc">Assisted in organising and executing Freshers Day at KHPS Base PU College, helping new students feel welcomed and ensuring the event ran smoothly. Developed skills in coordination and teamwork.</div>
+    </div>
+
+    <div class="vol-card">
+      <div class="vol-icon">💃</div>
+      <div class="vol-cat">Performing Arts · Community</div>
+      <div class="vol-title">Community Service <em>Dance Programme</em></div>
+      <div class="vol-desc">Performed Bharatanatyam as part of a community service initiative, using classical dance to engage and give back to the local community.</div>
+    </div>
+
+    <div class="vol-card">
+      <div class="vol-icon">📚</div>
+      <div class="vol-cat">Education · Outreach</div>
+      <div class="vol-title">Teaching Visit to <em>Melkote</em></div>
+      <div class="vol-desc">Visited a government school in Melkote to teach and interact with students from underserved communities, donating books and contributing to educational outreach.</div>
+    </div>
+
+    <div class="vol-card">
+      <div class="vol-icon">🎉</div>
+      <div class="vol-cat">Events · Leadership</div>
+      <div class="vol-title">Event <em>Volunteer</em></div>
+      <div class="vol-desc">Regularly volunteered at school and dance class events, assisting with coordination, logistics and ensuring the successful execution of programmes.</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CULTURAL EXPERIENCES -->
+<div class="section" id="cultural">
+  <div class="sec-label">Cultural Experiences</div>
+  <div class="sec-title">Heritage, <em>Art</em> & Identity</div>
+  <div class="sec-desc">Exploring India's rich cultural and artistic heritage beyond the classroom.</div>
+  <div class="activity-grid">
+
+    <div class="act-card act-school">
+      <div class="act-content">
+        <div class="act-cat" style="color:#b44fff">Cultural Heritage · Education</div>
+        <div class="act-title">Visit to the <em>Sanskrit Academy</em></div>
+        <div class="act-desc">Visited the Sanskrit Academy in Bangalore to explore how ancient manuscripts are digitally scanned and preserved for future generations. Witnessed the beautiful intersection of technology and cultural heritage — a reminder that innovation isn't just about the future, but also about protecting the past.</div>
+      </div>
+      <img src="sanskrit.jpg" alt="Sanskrit Academy manuscript room" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="act-photo-placeholder" style="display:none">Upload sanskrit.jpg</div>
+    </div>
+
+    <div class="act-card act-school reverse">
+      <div class="act-content">
+        <div class="act-cat" style="color:#b44fff">Cultural Heritage · Preservation</div>
+        <div class="act-title">Ancient Manuscripts <em>Up Close</em></div>
+        <div class="act-desc">A closer look at the centuries-old manuscripts being preserved at the Sanskrit Academy — handwritten texts that carry the knowledge and stories of generations past, now being brought into the digital age.</div>
+      </div>
+      <img src="sanskrit2.jpg" alt="Sanskrit Academy exterior" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="act-photo-placeholder" style="display:none">Upload sanskrit2.jpg</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left">
+    <div class="sec-label">Contact</div>
+    <div class="sec-title">Get In <em>Touch</em></div>
+    <p>I'd love to hear from you — whether it's about my projects, collaborations, or just a conversation about AI and technology.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:avani.mandya@gmail.com">
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">avani.mandya@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-link" href="https://github.com/avani-mandya" target="_blank">
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">github.com/avani-mandya</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <h3>Send a <em style="font-style:italic;color:var(--gold)">Message</em></h3>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="your@email.com">
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea rows="4" placeholder="Your message…"></textarea>
+    </div>
+    <button class="form-submit" onclick="alert('Thank you for your message! I will get back to you soon.')">Send Message</button>
+  </div>
+</section>
+
+<footer>
+  <span>© Avani Kanchi Mandya</span>
+  <span>Built with Code & Curiosity</span>
+  <a href="mailto:avani.mandya@gmail.com" style="color:var(--muted);text-decoration:none">avani.mandya@gmail.com</a>
+</footer>
+
+</body>
+</html>
