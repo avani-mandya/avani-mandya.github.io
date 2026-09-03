@@ -4,693 +4,635 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avani Kanchi Mandya</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a0a0a;
-  --bg2:#111111;
-  --bg3:#181818;
-  --gold:#c8923a;
-  --gold2:#e8b060;
-  --text:#d0d0d0;
-  --muted:#666;
-  --border:#222;
-  --white:#f5f5f5;
-}
+:root{--black:#1a1a1a;--gray:#555;--lgray:#999;--border:#e0e0e0;--bg:#ffffff;--bg2:#f9f9f9}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:#333}
+body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.7}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#ddd}
 
 /* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:1.2rem 3rem;
+  background:#fff;border-bottom:1px solid var(--border);
+  padding:0 3rem;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(10,10,10,0.9);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
+  height:60px;
 }
-.nav-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.15rem;color:var(--white);letter-spacing:1px;
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;color:var(--black);letter-spacing:0.5px;
+  text-decoration:none;
 }
-.nav-name em{font-style:italic;color:var(--gold)}
-.nav-links{display:flex;gap:2.5rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{
-  font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;transition:color 0.2s;
+  font-size:0.78rem;letter-spacing:1px;
+  color:var(--gray);text-decoration:none;
+  transition:color 0.2s;text-transform:uppercase;
 }
-.nav-links a:hover{color:var(--white)}
+.nav-links a:hover{color:var(--black)}
 
 /* HERO */
 #hero{
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  padding:8rem 3rem 4rem;
-  gap:4rem;
-  max-width:1200px;
-  margin:0 auto;
+  padding:100px 3rem 60px;
+  max-width:900px;margin:0 auto;
+  text-align:center;
 }
-.hero-left{}
-.hero-tag{
-  font-size:0.62rem;letter-spacing:5px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;
-}
-.hero-tag::before{content:'';width:30px;height:1px;background:var(--gold)}
-.hero-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,5vw,5.5rem);
-  font-weight:300;color:var(--white);
-  line-height:1;letter-spacing:-1px;
-  margin-bottom:1.2rem;
-}
-.hero-name em{font-style:italic;color:var(--gold);display:block}
-.hero-intro{
-  font-size:0.9rem;line-height:1.9;color:var(--muted);
-  margin-bottom:2rem;max-width:440px;
-}
-.hero-quote{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;font-size:1rem;
-  color:rgba(200,146,58,0.55);
-  border-left:2px solid rgba(200,146,58,0.3);
-  padding-left:1rem;
-  line-height:1.7;
-  margin-bottom:2rem;
-}
-.hero-quote cite{
-  display:block;font-style:normal;
-  font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);margin-top:0.4rem;
-}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-outline{
-  padding:10px 24px;
-  border:1px solid var(--border);
-  font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;transition:all 0.2s;
-  display:inline-block;
-}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.btn-gold{
-  padding:10px 24px;
-  background:var(--gold);border:1px solid var(--gold);
-  font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;
-  color:#000;text-decoration:none;transition:all 0.2s;
-  display:inline-block;font-weight:500;
-}
-.btn-gold:hover{background:var(--gold2);border-color:var(--gold2)}
-
-.hero-right{
-  display:flex;justify-content:center;align-items:center;
-}
-.hero-photo-wrap{
-  position:relative;width:380px;max-width:100%;
-}
-.hero-photo-wrap::before{
-  content:'';
-  position:absolute;
-  top:16px;left:16px;right:-16px;bottom:-16px;
-  border:1px solid rgba(200,146,58,0.25);
-  z-index:0;
-}
-.hero-photo{
+.hero-cover{
   width:100%;
-  aspect-ratio:3/4;
+  max-height:500px;
   object-fit:cover;
   object-position:top;
-  position:relative;z-index:1;
-  filter:grayscale(20%);
-  transition:filter 0.3s;
+  margin-bottom:2rem;
+  display:block;
 }
-.hero-photo:hover{filter:grayscale(0%)}
-.hero-photo-placeholder{
-  width:100%;aspect-ratio:3/4;
-  background:var(--bg3);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;z-index:1;
-  color:var(--muted);font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;font-weight:700;
+  color:var(--black);margin-bottom:0.5rem;
+  line-height:1.2;
+}
+.hero-sub{
+  font-size:1rem;color:var(--gray);
+  font-style:italic;margin-bottom:1.5rem;
+  font-family:'Playfair Display',serif;
+}
+.hero-intro{
+  font-size:1.05rem;color:var(--gray);
+  line-height:1.9;max-width:680px;
+  margin:0 auto 2rem;
+}
+.hero-photo{
+  width:220px;height:280px;
+  object-fit:cover;object-position:top;
+  margin:1.5rem auto;
+  display:block;
+  border:1px solid var(--border);
 }
 
 /* DIVIDER */
-.divider{
-  max-width:1200px;margin:0 auto;
-  border:none;border-top:1px solid var(--border);
-}
+hr{border:none;border-top:1px solid var(--border);margin:0}
 
 /* SECTIONS */
-.section{padding:5rem 3rem;max-width:1200px;margin:0 auto}
-.sec-label{
-  font-size:0.6rem;letter-spacing:5px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:0.75rem;
-  display:flex;align-items:center;gap:10px;
-}
-.sec-label::before{content:'';width:20px;height:1px;background:var(--gold)}
-.sec-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,4vw,3.5rem);
-  font-weight:300;color:var(--white);
-  margin-bottom:0.5rem;line-height:1.1;
-}
-.sec-title em{font-style:italic;color:var(--gold)}
-.sec-desc{font-size:0.85rem;color:var(--muted);line-height:1.8;max-width:600px;margin-bottom:3rem}
+.section{padding:4rem 3rem;max-width:900px;margin:0 auto}
+.section-sm{padding:3rem 3rem;max-width:900px;margin:0 auto}
 
-/* ACTIVITY CARDS */
-.activity-grid{display:flex;flex-direction:column;gap:1px;background:var(--border)}
-.act-card{
-  background:var(--bg);
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:0;
-  transition:background 0.2s;
-}
-.act-card:hover{background:var(--bg2)}
-.act-card.reverse{direction:rtl}
-.act-card.reverse>*{direction:ltr}
-.act-content{
-  padding:3rem;
-  display:flex;flex-direction:column;
-  justify-content:center;
-}
-.act-cat{
-  font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;
-  margin-bottom:0.75rem;
-}
-.act-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.8rem;font-weight:300;
-  color:var(--white);margin-bottom:0.75rem;line-height:1.2;
-}
-.act-title em{font-style:italic}
-.act-desc{font-size:0.82rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem}
-.act-photo{
-  aspect-ratio:4/3;
-  object-fit:cover;
-  width:100%;height:100%;
-}
-.act-photo-placeholder{
-  aspect-ratio:4/3;
-  background:var(--bg3);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;
-  border-left:1px solid var(--border);
-}
-.act-card.reverse .act-photo-placeholder{border-left:none;border-right:1px solid var(--border)}
+/* SECTION CARDS — like Naavya's */
+.entry{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border)}
+.entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
 
-/* PROJECTS */
-.projects-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1px;
-  background:var(--border);
+.entry-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:700;
+  color:var(--black);margin-bottom:1rem;
+  line-height:1.3;
 }
-.proj-card{
-  background:var(--bg);
-  padding:2.5rem;
-  text-decoration:none;
-  display:block;
-  transition:background 0.2s;
-  position:relative;
-  overflow:hidden;
+.entry-title em{font-style:italic;font-weight:400}
+
+.entry-img{
+  width:100%;max-height:420px;
+  object-fit:cover;object-position:center;
+  margin-bottom:1.5rem;display:block;
+  border:1px solid var(--border);
 }
-.proj-card::after{
-  content:'↗';
-  position:absolute;top:1.5rem;right:1.5rem;
-  font-size:1rem;color:var(--muted);
-  transition:all 0.2s;
+.entry-img.face{object-position:50% 25%}
+
+.entry-text{
+  font-size:1rem;color:var(--gray);
+  line-height:1.9;margin-bottom:1.2rem;
 }
-.proj-card:hover{background:var(--bg2)}
-.proj-card:hover::after{color:var(--gold);transform:translate(2px,-2px)}
-.proj-num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:0.75rem;color:var(--muted);
-  letter-spacing:3px;margin-bottom:1.5rem;
+.entry-text strong{color:var(--black)}
+
+.more-link{
+  display:inline-block;
+  font-size:0.85rem;color:var(--black);
+  text-decoration:none;font-weight:700;
+  letter-spacing:0.5px;
+  border-bottom:2px solid var(--black);
+  padding-bottom:2px;
+  transition:opacity 0.2s;
+  cursor:pointer;
 }
-.proj-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.6rem;font-weight:300;
-  color:var(--white);margin-bottom:0.5rem;line-height:1.2;
+.more-link:hover{opacity:0.6}
+
+/* EXPANDED SECTION */
+.expanded{
+  display:none;
+  padding-top:1.5rem;
 }
-.proj-name em{font-style:italic}
-.proj-type{
-  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;
-  margin-bottom:0.85rem;
+.expanded.open{display:block}
+.expanded-img{
+  width:100%;max-height:400px;
+  object-fit:cover;margin-bottom:1.5rem;
+  border:1px solid var(--border);
 }
-.proj-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
-.proj-tags{display:flex;flex-wrap:wrap;gap:5px}
-.proj-tag{
-  font-size:0.58rem;letter-spacing:1px;text-transform:uppercase;
-  padding:3px 9px;border:1px solid var(--border);color:var(--muted);
+.expanded-text{
+  font-size:1rem;color:var(--gray);line-height:1.9;
+  margin-bottom:1rem;
+}
+.expanded-text strong{color:var(--black)}
+.collapse-link{
+  display:inline-block;font-size:0.85rem;
+  color:var(--lgray);text-decoration:none;
+  cursor:pointer;margin-top:0.5rem;
+  border-bottom:1px solid var(--lgray);
 }
 
-/* VOLUNTEERING */
-.vol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
-.vol-card{
-  background:var(--bg);padding:2.5rem;
-  transition:background 0.2s;
-}
-.vol-card:hover{background:var(--bg2)}
-.vol-icon{font-size:1.8rem;margin-bottom:1rem}
-.vol-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:0.5rem;
-}
-.vol-title em{font-style:italic}
-.vol-desc{font-size:0.78rem;color:var(--muted);line-height:1.7}
-.vol-cat{
-  font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:0.5rem;
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
+.tag{
+  font-size:0.72rem;padding:4px 12px;
+  border:1px solid var(--border);
+  color:var(--gray);letter-spacing:0.5px;
 }
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.skill-block{background:var(--bg);padding:2rem}
-.skill-label{
-  font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;
+/* META */
+.meta-list{margin:1rem 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.meta-list li{font-size:0.9rem;color:var(--gray);display:flex;gap:10px}
+.meta-list li strong{color:var(--black);min-width:100px}
+
+/* PAGE HEADER */
+.page-header{
+  padding:120px 3rem 40px;
+  max-width:900px;margin:0 auto;
+  border-bottom:1px solid var(--border);
+  margin-bottom:0;
 }
-.skill-items{display:flex;flex-direction:column;gap:8px}
-.skill-item{
-  font-size:0.82rem;color:var(--muted);
-  display:flex;align-items:center;gap:8px;
+.page-header-label{
+  font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lgray);margin-bottom:0.75rem;
 }
-.skill-item::before{content:'—';color:var(--border)}
+.page-header-title{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;color:var(--black);
+  line-height:1.2;margin-bottom:0.75rem;
+}
+.page-header-title em{font-style:italic;font-weight:400}
+.page-header-desc{font-size:1rem;color:var(--gray);line-height:1.8;max-width:600px}
+
+/* PROJECTS GRID */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.proj-item{border:1px solid var(--border);padding:2rem;text-decoration:none;display:block;transition:border-color 0.2s;color:inherit}
+.proj-item:hover{border-color:var(--black)}
+.proj-num{font-size:0.72rem;color:var(--lgray);letter-spacing:2px;margin-bottom:1rem}
+.proj-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--black);margin-bottom:0.4rem;line-height:1.3}
+.proj-name em{font-style:italic;font-weight:400}
+.proj-type{font-size:0.72rem;color:var(--lgray);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.75rem}
+.proj-desc{font-size:0.88rem;color:var(--gray);line-height:1.7;margin-bottom:1rem}
+.proj-arrow{font-size:1rem;color:var(--lgray)}
+
+/* VOLUNTEER GRID */
+.vol-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.vol-item{padding:1.5rem;border:1px solid var(--border)}
+.vol-icon{font-size:1.5rem;margin-bottom:0.75rem}
+.vol-cat{font-size:0.7rem;color:var(--lgray);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.4rem}
+.vol-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--black);margin-bottom:0.5rem}
+.vol-desc{font-size:0.88rem;color:var(--gray);line-height:1.7}
 
 /* CONTACT */
-#contact{
-  padding:5rem 3rem;max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
-}
-.contact-left .sec-title{margin-bottom:1rem}
-.contact-left p{font-size:0.85rem;color:var(--muted);line-height:1.8;margin-bottom:2rem}
-.contact-links{display:flex;flex-direction:column;gap:10px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2rem}
+.contact-info p{font-size:1rem;color:var(--gray);line-height:1.9;margin-bottom:1.5rem}
 .contact-link{
-  display:flex;align-items:center;gap:12px;
-  font-size:0.82rem;color:var(--muted);text-decoration:none;
-  padding:12px 16px;border:1px solid var(--border);
-  transition:all 0.2s;
+  display:flex;flex-direction:column;
+  padding:1rem 1.2rem;border:1px solid var(--border);
+  text-decoration:none;margin-bottom:0.75rem;
+  transition:border-color 0.2s;
 }
-.contact-link:hover{border-color:var(--gold);color:var(--gold)}
-.contact-link-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-.contact-link-val{font-size:0.88rem;color:var(--white)}
-.contact-right{
-  background:var(--bg2);border:1px solid var(--border);padding:2.5rem;
-}
-.contact-right h3{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:1.5rem;
-}
+.contact-link:hover{border-color:var(--black)}
+.contact-link-label{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--lgray);margin-bottom:3px}
+.contact-link-val{font-size:0.95rem;color:var(--black)}
 .form-group{margin-bottom:1.2rem}
-.form-group label{
-  display:block;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:6px;
-}
-.form-group input,.form-group textarea{
-  width:100%;background:var(--bg);border:1px solid var(--border);
-  padding:10px 14px;font-family:'Inter',sans-serif;font-size:0.82rem;
-  color:var(--white);outline:none;transition:border-color 0.2s;resize:vertical;
-}
-.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
-.form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted)}
-.form-submit{
-  width:100%;background:var(--gold);border:none;
-  padding:12px;font-family:'Inter',sans-serif;
-  font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
-  color:#000;cursor:pointer;font-weight:500;transition:background 0.2s;
-}
-.form-submit:hover{background:var(--gold2)}
+.form-group label{display:block;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:6px}
+.form-group input,.form-group textarea{width:100%;border:1px solid var(--border);padding:10px 14px;font-family:'Lato',sans-serif;font-size:0.95rem;color:var(--black);outline:none;transition:border-color 0.2s;resize:vertical;background:#fff}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--black)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--lgray)}
+.form-submit{background:var(--black);border:none;padding:12px 32px;font-family:'Lato',sans-serif;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;color:#fff;cursor:pointer;font-weight:700;transition:opacity 0.2s}
+.form-submit:hover{opacity:0.7}
 
 /* FOOTER */
 footer{
-  padding:2rem 3rem;
-  border-top:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+  padding:2rem 3rem;border-top:1px solid var(--border);
+  text-align:center;font-size:0.78rem;color:var(--lgray);
+  letter-spacing:1px;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  #hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;gap:2.5rem}
-  .hero-right{order:-1}
-  .hero-photo-wrap{width:280px}
-  .act-card{grid-template-columns:1fr}
-  .act-card.reverse{direction:ltr}
-  .act-photo-placeholder,.act-photo{aspect-ratio:16/9}
-  .projects-grid{grid-template-columns:1fr}
-  .vol-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:1fr}
-  #contact{grid-template-columns:1fr}
-  nav{padding:1rem 1.5rem}
+/* QUOTE */
+.quote{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:1.15rem;
+  color:var(--gray);border-left:3px solid var(--border);
+  padding:1rem 1.5rem;margin:1.5rem 0;line-height:1.8;
+}
+.quote cite{display:block;font-style:normal;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--lgray);margin-top:0.4rem}
+
+/* IMAGE ROW */
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.img-row img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border)}
+
+@media(max-width:700px){
+  nav{padding:0 1rem}
   .nav-links{display:none}
-  .section{padding:3rem 1.5rem}
-  footer{flex-direction:column;gap:0.5rem;text-align:center}
+  #hero,.section,.section-sm,.page-header{padding-left:1.5rem;padding-right:1.5rem}
+  .proj-grid,.vol-grid,.contact-grid,.img-row{grid-template-columns:1fr}
 }
-
-/* COLOR ACCENTS PER ACTIVITY */
-.act-sport .act-cat{color:#00c8dc}
-.act-dance .act-cat{color:#e8b060}
-.act-school .act-cat{color:#3aaa7a}
-.act-sport .act-card-accent{background:rgba(0,200,220,0.05)}
-
-/* PROJ COLORS */
-.p1 .proj-type{color:#00c8dc}
-.p2 .proj-type{color:#e8b060}
-.p3 .proj-type{color:#3aaa7a}
-.p4 .proj-type{color:#e05070}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-name">Avani <em>Kanchi Mandya</em></div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#activities">Activities</a>
-    <a href="#projects">Projects</a>
-    <a href="#volunteering">Volunteering</a>
-    <a href="#cultural">Cultural</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <a class="nav-logo" href="#hero">Avani Kanchi Mandya</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#internship">Internship</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#school">School Life</a></li>
+    <li><a href="#cultural">Cultural</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO / HOME -->
 <section id="hero">
-  <div class="hero-left">
-    <div class="hero-tag">Grade 12 · KHPS Base PU College, Bangalore</div>
-    <h1 class="hero-name">
-      Avani
-      <em>Kanchi Mandya</em>
-    </h1>
-    <p class="hero-intro">
-      I'm a student passionate about Artificial Intelligence and its power to solve real problems. From building AI apps to performing Bharatanatyam on stage, I bring the same curiosity and dedication to everything I do.
-    </p>
-    <div class="hero-quote">
-      In every walk with nature, one receives far more than he seeks.
-      <cite>— John Muir</cite>
-    </div>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-gold">View Projects</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
-    </div>
+  <img src="profile.jpg" alt="Avani Kanchi Mandya" class="hero-photo" onerror="this.style.display='none'">
+  <h1 class="hero-name">Avani Kanchi Mandya</h1>
+  <p class="hero-sub">Aspiring AI Engineer · Grade 12, KHPS Base PU College, Bangalore</p>
+  <div class="quote">
+    In every walk with nature, one receives far more than she seeks.
+    <cite>— John Muir</cite>
   </div>
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <img src="profile.jpg" alt="Avani Kanchi Mandya" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="hero-photo-placeholder" style="display:none">Upload profile.jpg</div>
-    </div>
-  </div>
+  <p class="hero-intro">
+    Hi, I'm Avani Kanchi Mandya, a Grade 12 student from KHPS Base PU College, Bangalore, passionate about Artificial Intelligence. I believe technology is most powerful when it's built with empathy — whether that's making legal aid more accessible, helping dancers perfect their posture through computer vision, or preserving digital legacies. Outside of code, I'm a Bharatanatyam dancer, an avid reader, and a track and field athlete. I'm driven by a deep curiosity about how AI can empower people, and I'm committed to building solutions that make a genuine difference.
+  </p>
 </section>
 
-<hr class="divider">
-
-<!-- ABOUT -->
-<div class="section" id="about">
-  <div class="sec-label">About Me</div>
-  <div class="sec-title">Code, <em>Dance</em> &<br>Everything In Between</div>
-  <div class="sec-desc">
-    I'm Avani Kanchi Mandya, a 12th grade student from Bangalore with a deep passion for Artificial Intelligence. I believe technology becomes most powerful when it's built with empathy — whether that's making legal aid accessible, helping dancers perfect their posture, or preserving digital legacies. Outside of code, I'm a Bharatanatyam dancer, an avid reader, and a track and field athlete.
-  </div>
-  <div class="skills-grid">
-    <div class="skill-block">
-      <div class="skill-label">Future Plans</div>
-      <div class="skill-items">
-        <div class="skill-item">Pursue a degree in Computer Science with a focus on Artificial Intelligence</div>
-        <div class="skill-item">Build technology that creates meaningful social impact</div>
-      </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-label">Languages</div>
-      <div class="skill-items">
-        <div class="skill-item">English</div>
-        <div class="skill-item">Kannada</div>
-        <div class="skill-item">Hindi</div>
-      </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-label">Interests</div>
-      <div class="skill-items">
-        <div class="skill-item">Bharatanatyam</div>
-        <div class="skill-item">Reading</div>
-        <div class="skill-item">Athletics</div>
-        <div class="skill-item">Artificial Intelligence</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="divider">
-
-<!-- ACTIVITIES -->
-<div class="section" id="activities">
-  <div class="sec-label">Activities</div>
-  <div class="sec-title">Beyond the <em>Classroom</em></div>
-  <div class="sec-desc">From the athletics track to the classical dance stage, here's a glimpse of my life outside academics.</div>
-</div>
-
-<div class="activity-grid" style="max-width:1200px;margin:0 auto 0">
-
-  <!-- SPORTS -->
-  <div class="act-card act-sport">
-    <div class="act-content">
-      <div class="act-cat" style="color:#00c8dc">Athletics · Sports Day</div>
-      <div class="act-title">Javelin Throw, Shot Put <em>& Basketball</em></div>
-      <div class="act-desc">Competed in track and field events representing my college on Sports Day — including Javelin Throw, Shot Put, and Basketball. Athletics has taught me discipline, focus, and the value of pushing past limits.</div>
-    </div>
-    <img src="sports.jpg" alt="Sports Day" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="act-photo-placeholder" style="display:none">Upload sports.jpg</div>
-  </div>
-
-  <!-- DANCE PERFORMANCE -->
-  <div class="act-card act-dance reverse">
-    <div class="act-content">
-      <div class="act-cat" style="color:#e8b060">Performing Arts · Community Service</div>
-      <div class="act-title">Bharatanatyam <em>at an Old Age Home</em></div>
-      <div class="act-desc">Performed Bharatanatyam as part of a community service initiative at a local old age home, bringing joy to elderly residents through classical Indian dance. A deeply meaningful experience that reinforced how art transcends age and language.</div>
-    </div>
-    <img src="dance.jpg" alt="Bharatanatyam Performance" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="act-photo-placeholder" style="display:none">Upload dance.jpg</div>
-  </div>
-
-  <!-- TEACHING -->
-  <div class="act-card act-school">
-    <div class="act-content">
-      <div class="act-cat" style="color:#3aaa7a">Education · Outreach</div>
-      <div class="act-title">Teaching at a School <em>in Melkote</em></div>
-      <div class="act-desc">Visited a government school in Melkote to teach and interact with students, donating books and learning materials. Contributing to educational outreach in an underserved community was one of the most rewarding experiences of my life.</div>
-    </div>
-    <img src="melkote.jpg" alt="Teaching in Melkote" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="act-photo-placeholder" style="display:none">Upload melkote.jpg</div>
-  </div>
-
-  <!-- TEACHING 2 -->
-  <div class="act-card act-school reverse">
-    <div class="act-content">
-      <div class="act-cat" style="color:#3aaa7a">Education · Outreach</div>
-      <div class="act-title">Inside the <em>Classroom</em></div>
-      <div class="act-desc">Engaging directly with students inside the classroom — sharing books, interacting one on one, and inspiring curiosity in children from underserved communities.</div>
-    </div>
-    <img src="melkote2.jpg" alt="Inside classroom in Melkote" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="act-photo-placeholder" style="display:none">Upload melkote2.jpg</div>
-  </div>
-
-  <!-- DANCE 2 -->
-  <div class="act-card act-dance">
-    <div class="act-content">
-      <div class="act-cat" style="color:#e8b060">Performing Arts · Community</div>
-      <div class="act-title">Performing for the <em>Elderly</em></div>
-      <div class="act-desc">Brought joy to the residents of a local old age home through Bharatanatyam — a reminder that classical dance is not just an art form, but a language of connection that transcends age.</div>
-    </div>
-    <img src="dance2.jpg" alt="Audience at old age home" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="act-photo-placeholder" style="display:none">Upload dance2.jpg</div>
-  </div>
-
-</div>
-
-<hr class="divider" style="margin-top:0">
+<hr>
 
 <!-- PROJECTS -->
-<div class="section" id="projects">
-  <div class="sec-label">Projects</div>
-  <div class="sec-title">Things I've <em>Built</em></div>
-  <div class="sec-desc">Each of these projects was built to solve a real problem — from legal accessibility to classical dance, AI to digital legacy.</div>
-  <div class="projects-grid">
+<div class="page-header" id="projects">
+  <div class="page-header-label">My Work</div>
+  <h2 class="page-header-title">Projects <em>I've Built</em></h2>
+  <p class="page-header-desc">Each project was built to solve a real problem — from legal accessibility to classical dance, multiplayer AI games to digital legacy. Every line of code was written with a specific person in mind.</p>
+</div>
 
-    <a class="proj-card p1" href="https://avani-mandya.github.io/imposter-game/" target="_blank">
+<div class="section">
+  <div class="proj-grid">
+
+    <a class="proj-item" href="https://avani-mandya.github.io/imposter-game/" target="_blank">
       <div class="proj-num">01 / 04</div>
       <div class="proj-type">Social Deduction · AI Game</div>
       <div class="proj-name">Who Is The <em>Imposter?</em></div>
-      <div class="proj-desc">A multiplayer AI interrogation game where players question four AI suspects — one secretly guilty — to identify the imposter. Each character has a unique personality and responds dynamically to any question.</div>
-      <div class="proj-tags">
-        <span class="proj-tag">Gemini API</span>
-        <span class="proj-tag">JavaScript</span>
-        <span class="proj-tag">Multiplayer</span>
+      <div class="proj-desc">A multiplayer AI interrogation game where players question four AI suspects — one secretly guilty — to find the imposter. Each character responds dynamically to any question with a unique personality and backstory.</div>
+      <div class="tags">
+        <span class="tag">Gemini API</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Multiplayer</span>
       </div>
+      <div class="proj-arrow">↗</div>
     </a>
 
-    <a class="proj-card p2" href="https://avani-mandya.github.io/araimandi/" target="_blank">
+    <a class="proj-item" href="https://avani-mandya.github.io/araimandi/" target="_blank">
       <div class="proj-num">02 / 04</div>
       <div class="proj-type">Computer Vision · Dance Tech</div>
       <div class="proj-name"><em>Araimandi</em> Posture Corrector</div>
-      <div class="proj-desc">A real-time posture correction tool using MediaPipe to detect and score the Araimandi stance — the foundational half-sit position in Bharatanatyam. Built to help dancers perfect their form using AI.</div>
-      <div class="proj-tags">
-        <span class="proj-tag">MediaPipe</span>
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">Computer Vision</span>
+      <div class="proj-desc">A real-time posture correction tool using MediaPipe to detect and score the Araimandi stance — the foundational half-sit position in Bharatanatyam. Built to help dancers get objective feedback on their form.</div>
+      <div class="tags">
+        <span class="tag">MediaPipe</span>
+        <span class="tag">Python</span>
+        <span class="tag">Computer Vision</span>
       </div>
+      <div class="proj-arrow">↗</div>
     </a>
 
-    <a class="proj-card p3" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">
+    <a class="proj-item" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">
       <div class="proj-num">03 / 04</div>
-      <div class="proj-type">Legal AI · Practice Tool</div>
+      <div class="proj-type">Legal AI · Case Preparation</div>
       <div class="proj-name">Lawyer <em>AI</em></div>
-      <div class="proj-desc">An AI-powered tool that helps lawyers prepare and practice cases by simulating arguments, analysing case details, and providing legal insights — built during an internship at a law firm.</div>
-      <div class="proj-tags">
-        <span class="proj-tag">AI</span>
-        <span class="proj-tag">Legal Tech</span>
-        <span class="proj-tag">JavaScript</span>
+      <div class="proj-desc">An AI-powered tool that helps lawyers prepare and practice cases by simulating arguments, analysing case details and providing legal insights. Built during my internship at a law firm.</div>
+      <div class="tags">
+        <span class="tag">AI</span>
+        <span class="tag">Legal Tech</span>
+        <span class="tag">JavaScript</span>
       </div>
+      <div class="proj-arrow">↗</div>
     </a>
 
-    <a class="proj-card p4" href="https://avani-mandya.github.io/digital-executor/" target="_blank">
+    <a class="proj-item" href="https://avani-mandya.github.io/digital-executor/" target="_blank">
       <div class="proj-num">04 / 04</div>
       <div class="proj-type">Digital Legacy · Privacy</div>
       <div class="proj-name">Digital <em>Executor</em></div>
-      <div class="proj-desc">A tool that helps individuals identify and delete old unwanted digital files and organise their online accounts and assets — ensuring loved ones aren't left navigating the digital world alone.</div>
-      <div class="proj-tags">
-        <span class="proj-tag">JavaScript</span>
-        <span class="proj-tag">Privacy</span>
-        <span class="proj-tag">Digital Legacy</span>
+      <div class="proj-desc">A tool that helps individuals identify and delete old unwanted digital files and organise their online accounts and assets — so loved ones aren't left navigating the digital world alone.</div>
+      <div class="tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Privacy</span>
+        <span class="tag">Digital Legacy</span>
       </div>
+      <div class="proj-arrow">↗</div>
     </a>
 
   </div>
 </div>
 
-<hr class="divider">
+<hr>
 
-<!-- VOLUNTEERING -->
-<div class="section" id="volunteering">
-  <div class="sec-label">Volunteering</div>
-  <div class="sec-title">Giving <em>Back</em></div>
-  <div class="sec-desc">Community service has been as much a part of my journey as academics and projects.</div>
-  <div class="vol-grid">
+<!-- RESEARCH -->
+<div class="page-header" id="research">
+  <div class="page-header-label">Research</div>
+  <h2 class="page-header-title">AI & <em>Water Resource Management</em></h2>
+  <p class="page-header-desc">Independent research exploring how Artificial Intelligence can address one of the world's most pressing challenges — water scarcity.</p>
+</div>
 
-    <div class="vol-card">
-      <div class="vol-icon">🌟</div>
-      <div class="vol-cat">College · Event Management</div>
-      <div class="vol-title">Freshers Day <em>Volunteer</em></div>
-      <div class="vol-desc">Assisted in organising and executing Freshers Day at KHPS Base PU College, helping new students feel welcomed and ensuring the event ran smoothly. Developed skills in coordination and teamwork.</div>
+<div class="section">
+  <div class="entry">
+    <h3 class="entry-title">Artificial Intelligence in <em>Water Resource Management</em></h3>
+    <p class="entry-text">
+      Water scarcity is one of the defining challenges of our generation. In this research paper, I explore how Artificial Intelligence — from machine learning models to predictive analytics — can be applied to water resource management to help communities and governments make smarter, more sustainable decisions.
+    </p>
+    <p class="entry-text">
+      The paper examines real-world applications of AI in monitoring water quality, predicting shortages, optimising distribution networks, and responding to environmental changes driven by climate change. It argues that AI is not just a technical tool, but a critical enabler of water security for millions of people around the world.
+    </p>
+    <ul class="meta-list">
+      <li><strong>Topic</strong> AI in Water Resource Management</li>
+      <li><strong>Platform</strong> SSRN — Social Science Research Network</li>
+      <li><strong>Status</strong> Submitted · Pending Publication</li>
+      <li><strong>Focus</strong> Environmental AI · Sustainability · Machine Learning</li>
+    </ul>
+    <span class="more-link" onclick="toggleMore('research-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="research-more">
+      <p class="expanded-text">
+        The research began with a simple observation: despite being one of the most critical natural resources on earth, water is managed with surprisingly little data intelligence. Municipal water boards, agricultural planners, and environmental agencies often rely on outdated methods to track usage, predict demand, and respond to crises.
+      </p>
+      <p class="expanded-text">
+        Artificial Intelligence changes this. Machine learning models can analyse vast datasets — satellite imagery, sensor networks, historical usage patterns — to predict where water stress will occur before it becomes a crisis. Predictive models can help farmers irrigate more efficiently, reducing waste. Anomaly detection algorithms can identify leaks in distribution networks instantly. And climate models powered by AI can help governments plan infrastructure decades in advance.
+      </p>
+      <p class="expanded-text">
+        Writing this paper deepened my conviction that AI is most powerful when it is applied to challenges that affect the most people. Water is life — and AI may be one of our most powerful tools for protecting it.
+      </p>
+      <span class="collapse-link" onclick="toggleMore('research-more', this)">Show less</span>
     </div>
-
-    <div class="vol-card">
-      <div class="vol-icon">💃</div>
-      <div class="vol-cat">Performing Arts · Community</div>
-      <div class="vol-title">Community Service <em>Dance Programme</em></div>
-      <div class="vol-desc">Performed Bharatanatyam as part of a community service initiative, using classical dance to engage and give back to the local community.</div>
-    </div>
-
-    <div class="vol-card">
-      <div class="vol-icon">📚</div>
-      <div class="vol-cat">Education · Outreach</div>
-      <div class="vol-title">Teaching Visit to <em>Melkote</em></div>
-      <div class="vol-desc">Visited a government school in Melkote to teach and interact with students from underserved communities, donating books and contributing to educational outreach.</div>
-    </div>
-
-    <div class="vol-card">
-      <div class="vol-icon">🎉</div>
-      <div class="vol-cat">Events · Leadership</div>
-      <div class="vol-title">Event <em>Volunteer</em></div>
-      <div class="vol-desc">Regularly volunteered at school and dance class events, assisting with coordination, logistics and ensuring the successful execution of programmes.</div>
-    </div>
-
   </div>
 </div>
 
-<hr class="divider">
+<hr>
 
-<!-- CULTURAL EXPERIENCES -->
-<div class="section" id="cultural">
-  <div class="sec-label">Cultural Experiences</div>
-  <div class="sec-title">Heritage, <em>Art</em> & Identity</div>
-  <div class="sec-desc">Exploring India's rich cultural and artistic heritage beyond the classroom.</div>
-  <div class="activity-grid">
+<!-- INTERNSHIP -->
+<div class="page-header" id="internship">
+  <div class="page-header-label">Internship</div>
+  <h2 class="page-header-title">Legal AI <em>Internship</em></h2>
+  <p class="page-header-desc">Building real AI technology in a professional environment — from concept to working product.</p>
+</div>
 
-    <div class="act-card act-school">
-      <div class="act-content">
-        <div class="act-cat" style="color:#b44fff">Cultural Heritage · Education</div>
-        <div class="act-title">Visit to the <em>Sanskrit Academy</em></div>
-        <div class="act-desc">Visited the Sanskrit Academy in Bangalore to explore how ancient manuscripts are digitally scanned and preserved for future generations. Witnessed the beautiful intersection of technology and cultural heritage — a reminder that innovation isn't just about the future, but also about protecting the past.</div>
-      </div>
-      <img src="sanskrit.jpg" alt="Sanskrit Academy manuscript room" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="act-photo-placeholder" style="display:none">Upload sanskrit.jpg</div>
+<div class="section">
+  <div class="entry">
+    <h3 class="entry-title">Building <em>Lawyer AI</em> at a Law Firm</h3>
+    <p class="entry-text">
+      From <strong>9th March to 17th April</strong>, I interned at a law firm where I independently designed and built an AI-powered legal tool from scratch. The project — <strong>Lawyer AI</strong> — is a tool that helps lawyers prepare and practice cases more effectively by simulating arguments, analysing case details, and providing intelligent legal insights.
+    </p>
+    <p class="entry-text">
+      This internship gave me my first real taste of building technology for a professional context. I had to understand the needs of practising lawyers, translate those needs into a working product, and iterate based on real feedback. That process taught me as much about communication and empathy as it did about code.
+    </p>
+    <ul class="meta-list">
+      <li><strong>Duration</strong> 9th March – 17th April</li>
+      <li><strong>Role</strong> AI Developer — Intern</li>
+      <li><strong>Deliverable</strong> Lawyer AI — legal case preparation tool</li>
+      <li><strong>Skills</strong> AI Development · Legal Tech · JavaScript · Product Thinking</li>
+    </ul>
+    <span class="more-link" onclick="toggleMore('intern-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="intern-more">
+      <p class="expanded-text">
+        Walking into a law firm as a student and being trusted to build something real was both exciting and daunting. Lawyers think very differently from engineers — they care about precision, precedent, and persuasion. Understanding that mindset was the first challenge, and perhaps the most important one.
+      </p>
+      <p class="expanded-text">
+        I began by observing how lawyers at the firm prepared for cases — the research they did, the arguments they constructed, the ways they stress-tested their reasoning. From those observations, I designed Lawyer AI to simulate that process: feeding in case details, generating counter-arguments, and helping lawyers identify weaknesses in their own position before they faced them in court.
+      </p>
+      <p class="expanded-text">
+        The internship also made me think about the broader opportunity for AI in law. Legal aid is expensive and inaccessible to millions of people. AI tools like Lawyer AI are a step toward changing that — and I hope to continue building in this space.
+      </p>
+      <a class="more-link" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">Visit Lawyer AI ↗</a>
+      <br><br>
+      <span class="collapse-link" onclick="toggleMore('intern-more', this)">Show less</span>
     </div>
-
-    <div class="act-card act-school reverse">
-      <div class="act-content">
-        <div class="act-cat" style="color:#b44fff">Cultural Heritage · Preservation</div>
-        <div class="act-title">Ancient Manuscripts <em>Up Close</em></div>
-        <div class="act-desc">A closer look at the centuries-old manuscripts being preserved at the Sanskrit Academy — handwritten texts that carry the knowledge and stories of generations past, now being brought into the digital age.</div>
-      </div>
-      <img src="sanskrit2.jpg" alt="Sanskrit Academy exterior" class="act-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="act-photo-placeholder" style="display:none">Upload sanskrit2.jpg</div>
-    </div>
-
   </div>
 </div>
 
-<hr class="divider">
+<hr>
+
+<!-- COMMUNITY SERVICE -->
+<div class="page-header" id="community">
+  <div class="page-header-label">Community Service</div>
+  <h2 class="page-header-title">Giving <em>Back</em></h2>
+  <p class="page-header-desc">Community service has been as much a part of my journey as academics. These experiences have grounded me and deepened my sense of purpose.</p>
+</div>
+
+<div class="section">
+
+  <!-- DANCE -->
+  <div class="entry">
+    <h3 class="entry-title">Bharatanatyam Performance <em>at an Old Age Home</em></h3>
+    <img src="dance.jpg" alt="Bharatanatyam performance" class="entry-img" onerror="this.style.display='none'">
+    <p class="entry-text">
+      Performed Bharatanatyam as part of a community service initiative at a local old age home, bringing joy to elderly residents through classical Indian dance. Bharatanatyam is more than a dance form to me — it is a language. Every gesture tells a story, and performing for the elderly reminded me that art has the power to transcend barriers of age, language and background.
+    </p>
+    <span class="more-link" onclick="toggleMore('dance-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="dance-more">
+      <img src="dance2.jpg" alt="Audience at old age home" class="expanded-img" onerror="this.style.display='none'">
+      <p class="expanded-text">
+        The residents gathered in the hall, many of them moved by the classical rhythms and the stories told through each mudra and expression. Some of them recognised the compositions — Bharatanatyam carries centuries of devotion and storytelling, and those in the audience who had grown up with classical music and dance felt an immediate connection.
+      </p>
+      <p class="expanded-text">
+        Seeing their faces light up during the performance was one of the most moving experiences of my life. It reinforced my belief that community service doesn't always require resources — sometimes, the most meaningful gift you can give is your time, your art, and your presence. This experience also deepened my commitment to Bharatanatyam as a practice, knowing that it can bring such joy to others.
+      </p>
+      <span class="collapse-link" onclick="toggleMore('dance-more', this)">Show less</span>
+    </div>
+  </div>
+
+  <!-- MELKOTE -->
+  <div class="entry">
+    <h3 class="entry-title">Teaching Visit to a School <em>in Melkote</em></h3>
+    <img src="melkote.jpg" alt="Teaching in Melkote" class="entry-img" onerror="this.style.display='none'">
+    <p class="entry-text">
+      Visited a government school in Melkote, a small town in rural Karnataka, to teach and interact with students. We donated books and learning materials to children who had very little access to them. The students were bright, curious, and eager to learn — and their enthusiasm was deeply humbling.
+    </p>
+    <span class="more-link" onclick="toggleMore('melkote-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="melkote-more">
+      <img src="melkote2.jpg" alt="Inside classroom in Melkote" class="expanded-img" onerror="this.style.display='none'">
+      <p class="expanded-text">
+        Inside the classroom, I distributed books and spent time engaging with individual students — asking them about their interests, their dreams, their favourite subjects. The curiosity and warmth these children showed, despite having so few resources, left a lasting impression on me.
+      </p>
+      <p class="expanded-text">
+        This visit reminded me how much difference access to resources and a single encouraging interaction can make in a child's life. It also reinforced my conviction that technology — and the education it enables — is one of the most powerful tools for reducing inequality. Every child deserves access to the same opportunities, regardless of where they are born.
+      </p>
+      <span class="collapse-link" onclick="toggleMore('melkote-more', this)">Show less</span>
+    </div>
+  </div>
+
+  <!-- VOLUNTEERING -->
+  <div class="entry">
+    <h3 class="entry-title">Volunteering <em>& Events</em></h3>
+    <p class="entry-text">Beyond these major initiatives, I have regularly volunteered at school and dance class events — coordinating logistics, supporting organisers, and ensuring events ran smoothly. Each of these experiences taught me the value of showing up, being reliable, and contributing to something larger than myself.</p>
+    <div class="vol-grid">
+      <div class="vol-item">
+        <div class="vol-icon">🌟</div>
+        <div class="vol-cat">College Event</div>
+        <div class="vol-name">Freshers Day Volunteer</div>
+        <div class="vol-desc">Helped organise and run Freshers Day at KHPS Base PU College, welcoming new students and coordinating logistics. My first experience managing a large-scale event — and one that showed me the power of a well-run team.</div>
+      </div>
+      <div class="vol-item">
+        <div class="vol-icon">🎉</div>
+        <div class="vol-cat">Recurring</div>
+        <div class="vol-name">School & Dance Events</div>
+        <div class="vol-desc">Regularly volunteered at school events and dance academy performances — helping with setup, coordination and execution. These experiences built my organisational skills and taught me the importance of reliability.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<!-- SCHOOL LIFE -->
+<div class="page-header" id="school">
+  <div class="page-header-label">Life at School</div>
+  <h2 class="page-header-title">Beyond <em>the Classroom</em></h2>
+  <p class="page-header-desc">Athletics, dance, and a love of learning — here's a glimpse of my life at KHPS Base PU College.</p>
+</div>
+
+<div class="section">
+  <div class="entry">
+    <h3 class="entry-title">Sports Day — Javelin Throw, Shot Put <em>& Basketball</em></h3>
+    <img src="sports.jpg" alt="Sports Day" class="entry-img face" onerror="this.style.display='none'">
+    <p class="entry-text">
+      Competed in track and field events representing my college on Sports Day — including <strong>Javelin Throw</strong>, <strong>Shot Put</strong>, and <strong>Basketball</strong>. Athletics has always been a space where I push my physical and mental limits. The discipline required in sport — the focus under pressure, the persistence through failure, the commitment to showing up — has shaped how I approach every challenge in life.
+    </p>
+    <span class="more-link" onclick="toggleMore('sports-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="sports-more">
+      <p class="expanded-text">
+        Track and field events like Javelin Throw and Shot Put require a combination of explosive strength, technical precision, and mental composure. Each throw is a moment of complete focus — every distraction disappears, and it's just you, the implement, and the arc of your movement through space.
+      </p>
+      <p class="expanded-text">
+        Basketball added a completely different dimension — teamwork, communication, and the ability to read and respond to others in real time. Playing as part of a team taught me skills that no classroom can fully replicate: trust, adaptability, and the ability to perform under collective pressure.
+      </p>
+      <p class="expanded-text">
+        Sports Day at KHPS Base PU College is one of the most anticipated events of the year. Competing for my college in multiple events was a source of tremendous pride, and the experience reinforced my belief that physical discipline and intellectual discipline are not separate — they are deeply connected.
+      </p>
+      <span class="collapse-link" onclick="toggleMore('sports-more', this)">Show less</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <h3 class="entry-title">Bharatanatyam — <em>A Lifelong Practice</em></h3>
+    <p class="entry-text">
+      Bharatanatyam is one of India's oldest classical dance forms, with roots stretching back over two thousand years. I have been a dedicated student of Bharatanatyam for many years, training rigorously in technique, expression, and the rich storytelling tradition of the form.
+    </p>
+    <p class="entry-text">
+      My passion for Bharatanatyam directly inspired one of my most personal projects — the <strong>Araimandi Posture Corrector</strong>, a computer vision tool built to help dancers perfect the foundational half-sit stance of the form. It was a way of bringing together two of my greatest passions: technology and dance.
+    </p>
+    <span class="more-link" onclick="toggleMore('dance2-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="dance2-more">
+      <p class="expanded-text">
+        Bharatanatyam demands total commitment. The practice begins with mastering the physical fundamentals — posture, footwork, hand gestures — before progressing to the emotional and narrative dimensions of performance. Every performance tells a story, drawn from mythology, devotion, and the full spectrum of human experience.
+      </p>
+      <p class="expanded-text">
+        Training in Bharatanatyam has given me discipline, stage presence, and an appreciation for the value of mastery — the understanding that true skill comes only through years of patient, deliberate practice. It has also given me a deep connection to India's cultural heritage, and a desire to help preserve and share it.
+      </p>
+      <p class="expanded-text">
+        The connection between my dance practice and my technology work is something I think about often. The Araimandi Posture Corrector emerged from a real problem I experienced as a dancer — the difficulty of receiving accurate, objective feedback on your posture when you cannot see yourself from the outside. Technology, in this case, became a tool for art.
+      </p>
+      <span class="collapse-link" onclick="toggleMore('dance2-more', this)">Show less</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <h3 class="entry-title">Reading — <em>A Lifelong Habit</em></h3>
+    <p class="entry-text">
+      Reading has been one of the constants of my life. From science and technology to philosophy, fiction and history — books have shaped my thinking, broadened my perspective, and fuelled the curiosity that drives everything I do. I believe that the best engineers, researchers and innovators are also deep readers — because great ideas rarely come from one domain alone.
+    </p>
+  </div>
+</div>
+
+<hr>
+
+<!-- CULTURAL -->
+<div class="page-header" id="cultural">
+  <div class="page-header-label">Cultural Experiences</div>
+  <h2 class="page-header-title">Heritage, Art <em>& Identity</em></h2>
+  <p class="page-header-desc">Exploring India's rich cultural and intellectual heritage — and discovering how technology can help preserve it.</p>
+</div>
+
+<div class="section">
+  <div class="entry">
+    <h3 class="entry-title">Visit to the <em>Sanskrit Academy, Bangalore</em></h3>
+    <img src="sanskrit.jpg" alt="Inside the manuscript room" class="entry-img" onerror="this.style.display='none'">
+    <p class="entry-text">
+      Visited the Sanskrit Academy in Bangalore to explore how ancient manuscripts are digitally scanned and preserved for future generations. Inside the manuscript room, I saw centuries-old handwritten texts being carefully digitised — some of them fragile, some faded, all of them irreplaceable. It was a powerful reminder that technology is not just about the future; it is one of our greatest tools for protecting the past.
+    </p>
+    <span class="more-link" onclick="toggleMore('sanskrit-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="sanskrit-more">
+      <img src="sanskrit2.jpg" alt="Sanskrit Academy exterior" class="expanded-img" onerror="this.style.display='none'">
+      <p class="expanded-text">
+        The Sanskrit Academy, Bangalore, is one of India's most important institutions for the preservation of classical knowledge. During our visit, we learned about the painstaking process of scanning, cataloguing and digitising ancient manuscripts — some of them over a thousand years old. Each page requires careful handling, precise lighting, and expert knowledge to capture accurately.
+      </p>
+      <p class="expanded-text">
+        What struck me most was the intersection of two worlds I deeply care about: technology and culture. The scholars at the Academy are using digital tools to ensure that the wisdom encoded in these ancient texts survives into the future — and that scholars, students and curious people around the world can one day access them freely.
+      </p>
+      <p class="expanded-text">
+        This visit deepened my interest in how AI could accelerate this work. Machine learning models are already being used to decipher damaged manuscripts, recognise ancient scripts, and translate texts that have been inaccessible for centuries. The potential is extraordinary — and deeply exciting.
+      </p>
+      <span class="collapse-link" onclick="toggleMore('sanskrit-more', this)">Show less</span>
+    </div>
+  </div>
+</div>
+
+<hr>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="contact-left">
-    <div class="sec-label">Contact</div>
-    <div class="sec-title">Get In <em>Touch</em></div>
-    <p>I'd love to hear from you — whether it's about my projects, collaborations, or just a conversation about AI and technology.</p>
-    <div class="contact-links">
+<div class="page-header" id="contact">
+  <div class="page-header-label">Contact</div>
+  <h2 class="page-header-title">Get In <em>Touch</em></h2>
+  <p class="page-header-desc">I'd love to hear from you — whether it's about my projects, my research, potential collaborations, or just a conversation about AI.</p>
+</div>
+
+<div class="section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>Feel free to reach out through any of the channels below. I try to respond to all messages as quickly as possible.</p>
       <a class="contact-link" href="mailto:avani.mandya@gmail.com">
-        <div>
-          <div class="contact-link-label">Email</div>
-          <div class="contact-link-val">avani.mandya@gmail.com</div>
-        </div>
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-val">avani.mandya@gmail.com</span>
       </a>
       <a class="contact-link" href="https://github.com/avani-mandya" target="_blank">
-        <div>
-          <div class="contact-link-label">GitHub</div>
-          <div class="contact-link-val">github.com/avani-mandya</div>
-        </div>
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-val">github.com/avani-mandya</span>
       </a>
     </div>
+    <div>
+      <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+      <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Your message…"></textarea></div>
+      <button class="form-submit" onclick="alert('Thank you! I will get back to you soon.')">Send Message</button>
+    </div>
   </div>
-  <div class="contact-right">
-    <h3>Send a <em style="font-style:italic;color:var(--gold)">Message</em></h3>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" placeholder="Your name">
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" placeholder="your@email.com">
-    </div>
-    <div class="form-group">
-      <label>Message</label>
-      <textarea rows="4" placeholder="Your message…"></textarea>
-    </div>
-    <button class="form-submit" onclick="alert('Thank you for your message! I will get back to you soon.')">Send Message</button>
-  </div>
-</section>
+</div>
 
 <footer>
-  <span>© Avani Kanchi Mandya</span>
-  <span>Built with Code & Curiosity</span>
-  <a href="mailto:avani.mandya@gmail.com" style="color:var(--muted);text-decoration:none">avani.mandya@gmail.com</a>
+  © Avani Kanchi Mandya &nbsp;·&nbsp; avani.mandya@gmail.com &nbsp;·&nbsp; Built with Code & Curiosity
 </footer>
 
+<script>
+function toggleMore(id, el){
+  const div=document.getElementById(id);
+  const isOpen=div.classList.contains('open');
+  div.classList.toggle('open');
+  if(!isOpen){
+    el.textContent='Show less';
+    el.className='collapse-link';
+  } else {
+    el.textContent='More >>';
+    el.className='more-link';
+    el.setAttribute('onclick',`toggleMore('${id}', this)`);
+  }
+}
+</script>
 </body>
 </html>
