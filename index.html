@@ -9,7 +9,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--black:#1a1a1a;--gray:#555;--lgray:#999;--border:#e0e0e0;--bg:#ffffff;--bg2:#f9f9f9}
 html{scroll-behavior:smooth}
-body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.7}
+body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.8;font-size:18px}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#ddd}
 
 /* NAV */
@@ -49,17 +49,17 @@ nav{
 }
 .hero-name{
   font-family:'Playfair Display',serif;
-  font-size:2.8rem;font-weight:700;
+  font-size:3.5rem;font-weight:700;
   color:var(--black);margin-bottom:0.5rem;
   line-height:1.2;
 }
 .hero-sub{
-  font-size:1rem;color:var(--gray);
+  font-size:1.2rem;color:var(--gray);
   font-style:italic;margin-bottom:1.5rem;
   font-family:'Playfair Display',serif;
 }
 .hero-intro{
-  font-size:1.05rem;color:var(--gray);
+  font-size:1.15rem;color:var(--gray);
   line-height:1.9;max-width:680px;
   margin:0 auto 2rem;
 }
@@ -84,7 +84,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 
 .entry-title{
   font-family:'Playfair Display',serif;
-  font-size:1.6rem;font-weight:700;
+  font-size:2rem;font-weight:700;
   color:var(--black);margin-bottom:1rem;
   line-height:1.3;
 }
@@ -99,7 +99,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .entry-img.face{object-position:50% 25%}
 
 .entry-text{
-  font-size:1rem;color:var(--gray);
+  font-size:1.1rem;color:var(--gray);
   line-height:1.9;margin-bottom:1.2rem;
 }
 .entry-text strong{color:var(--black)}
@@ -245,6 +245,7 @@ footer{
   <ul class="nav-links">
     <li><a href="#internship">Internship</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#community">Community</a></li>
     <li><a href="#school">School Life</a></li>
     <li><a href="#cultural">Cultural</a></li>
@@ -265,6 +266,48 @@ footer{
     Hi, I'm Avani Kanchi Mandya, a Grade 12 student from KHPS Base PU College, Bangalore, passionate about Artificial Intelligence. I believe technology is most powerful when it's built with empathy — whether that's making legal aid more accessible, helping dancers perfect their posture through computer vision, or preserving digital legacies. Outside of code, I'm a Bharatanatyam dancer, an avid reader, and a track and field athlete. I'm driven by a deep curiosity about how AI can empower people, and I'm committed to building solutions that make a genuine difference.
   </p>
 </section>
+
+<hr>
+
+<!-- INTERNSHIP -->
+<div class="page-header" id="internship">
+  <div class="page-header-label">Internship</div>
+  <h2 class="page-header-title">Legal AI <em>Internship</em></h2>
+  <p class="page-header-desc">Building real AI technology in a professional environment — from concept to working product.</p>
+</div>
+
+<div class="section">
+  <div class="entry">
+    <h3 class="entry-title">Building <em>Lawyer AI</em> at a Law Firm</h3>
+    <p class="entry-text">
+      From <strong>9th March to 17th April</strong>, I interned at a law firm where I independently designed and built an AI-powered legal tool from scratch. The project — <strong>Lawyer AI</strong> — is a tool that helps lawyers prepare and practice cases more effectively by simulating arguments, analysing case details, and providing intelligent legal insights.
+    </p>
+    <p class="entry-text">
+      This internship gave me my first real taste of building technology for a professional context. I had to understand the needs of practising lawyers, translate those needs into a working product, and iterate based on real feedback. That process taught me as much about communication and empathy as it did about code.
+    </p>
+    <ul class="meta-list">
+      <li><strong>Duration</strong> 9th March – 17th April</li>
+      <li><strong>Role</strong> AI Developer — Intern</li>
+      <li><strong>Deliverable</strong> Lawyer AI — legal case preparation tool</li>
+      <li><strong>Skills</strong> AI Development · Legal Tech · JavaScript · Product Thinking</li>
+    </ul>
+    <span class="more-link" onclick="toggleMore('intern-more', this)">More &gt;&gt;</span>
+    <div class="expanded" id="intern-more">
+      <p class="expanded-text">
+        Walking into a law firm as a student and being trusted to build something real was both exciting and daunting. Lawyers think very differently from engineers — they care about precision, precedent, and persuasion. Understanding that mindset was the first challenge, and perhaps the most important one.
+      </p>
+      <p class="expanded-text">
+        I began by observing how lawyers at the firm prepared for cases — the research they did, the arguments they constructed, the ways they stress-tested their reasoning. From those observations, I designed Lawyer AI to simulate that process: feeding in case details, generating counter-arguments, and helping lawyers identify weaknesses in their own position before they faced them in court.
+      </p>
+      <p class="expanded-text">
+        The internship also made me think about the broader opportunity for AI in law. Legal aid is expensive and inaccessible to millions of people. AI tools like Lawyer AI are a step toward changing that — and I hope to continue building in this space.
+      </p>
+      <a class="more-link" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">Visit Lawyer AI ↗</a>
+      <br><br>
+      <span class="collapse-link" onclick="toggleMore('intern-more', this)">Show less</span>
+    </div>
+  </div>
+</div>
 
 <hr>
 
@@ -369,48 +412,6 @@ footer{
         Writing this paper deepened my conviction that AI is most powerful when it is applied to challenges that affect the most people. Water is life — and AI may be one of our most powerful tools for protecting it.
       </p>
       <span class="collapse-link" onclick="toggleMore('research-more', this)">Show less</span>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<!-- INTERNSHIP -->
-<div class="page-header" id="internship">
-  <div class="page-header-label">Internship</div>
-  <h2 class="page-header-title">Legal AI <em>Internship</em></h2>
-  <p class="page-header-desc">Building real AI technology in a professional environment — from concept to working product.</p>
-</div>
-
-<div class="section">
-  <div class="entry">
-    <h3 class="entry-title">Building <em>Lawyer AI</em> at a Law Firm</h3>
-    <p class="entry-text">
-      From <strong>9th March to 17th April</strong>, I interned at a law firm where I independently designed and built an AI-powered legal tool from scratch. The project — <strong>Lawyer AI</strong> — is a tool that helps lawyers prepare and practice cases more effectively by simulating arguments, analysing case details, and providing intelligent legal insights.
-    </p>
-    <p class="entry-text">
-      This internship gave me my first real taste of building technology for a professional context. I had to understand the needs of practising lawyers, translate those needs into a working product, and iterate based on real feedback. That process taught me as much about communication and empathy as it did about code.
-    </p>
-    <ul class="meta-list">
-      <li><strong>Duration</strong> 9th March – 17th April</li>
-      <li><strong>Role</strong> AI Developer — Intern</li>
-      <li><strong>Deliverable</strong> Lawyer AI — legal case preparation tool</li>
-      <li><strong>Skills</strong> AI Development · Legal Tech · JavaScript · Product Thinking</li>
-    </ul>
-    <span class="more-link" onclick="toggleMore('intern-more', this)">More &gt;&gt;</span>
-    <div class="expanded" id="intern-more">
-      <p class="expanded-text">
-        Walking into a law firm as a student and being trusted to build something real was both exciting and daunting. Lawyers think very differently from engineers — they care about precision, precedent, and persuasion. Understanding that mindset was the first challenge, and perhaps the most important one.
-      </p>
-      <p class="expanded-text">
-        I began by observing how lawyers at the firm prepared for cases — the research they did, the arguments they constructed, the ways they stress-tested their reasoning. From those observations, I designed Lawyer AI to simulate that process: feeding in case details, generating counter-arguments, and helping lawyers identify weaknesses in their own position before they faced them in court.
-      </p>
-      <p class="expanded-text">
-        The internship also made me think about the broader opportunity for AI in law. Legal aid is expensive and inaccessible to millions of people. AI tools like Lawyer AI are a step toward changing that — and I hope to continue building in this space.
-      </p>
-      <a class="more-link" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">Visit Lawyer AI ↗</a>
-      <br><br>
-      <span class="collapse-link" onclick="toggleMore('intern-more', this)">Show less</span>
     </div>
   </div>
 </div>
