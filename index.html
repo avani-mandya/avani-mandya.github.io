@@ -9,7 +9,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--black:#1a1a1a;--gray:#555;--lgray:#999;--border:#e0e0e0;--bg:#ffffff;--bg2:#f9f9f9}
 html{scroll-behavior:smooth}
-body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.8;font-size:18px}
+body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.9;font-size:22px}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#ddd}
 
 /* NAV */
@@ -49,7 +49,7 @@ nav{
 }
 .hero-name{
   font-family:'Playfair Display',serif;
-  font-size:3.5rem;font-weight:700;
+  font-size:4rem;font-weight:700;
   color:var(--black);margin-bottom:0.5rem;
   line-height:1.2;
 }
@@ -59,7 +59,7 @@ nav{
   font-family:'Playfair Display',serif;
 }
 .hero-intro{
-  font-size:1.15rem;color:var(--gray);
+  font-size:1.25rem;color:var(--gray);
   line-height:1.9;max-width:680px;
   margin:0 auto 2rem;
 }
@@ -84,7 +84,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 
 .entry-title{
   font-family:'Playfair Display',serif;
-  font-size:2rem;font-weight:700;
+  font-size:2.5rem;font-weight:700;
   color:var(--black);margin-bottom:1rem;
   line-height:1.3;
 }
@@ -99,7 +99,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .entry-img.face{object-position:50% 25%}
 
 .entry-text{
-  font-size:1.1rem;color:var(--gray);
+  font-size:1.25rem;color:var(--gray);
   line-height:1.9;margin-bottom:1.2rem;
 }
 .entry-text strong{color:var(--black)}
@@ -128,7 +128,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
   border:1px solid var(--border);
 }
 .expanded-text{
-  font-size:1rem;color:var(--gray);line-height:1.9;
+  font-size:1.2rem;color:var(--gray);line-height:1.9;
   margin-bottom:1rem;
 }
 .expanded-text strong{color:var(--black)}
@@ -263,7 +263,13 @@ footer{
     <cite>— John Muir</cite>
   </div>
   <p class="hero-intro">
-    Hi, I'm Avani Kanchi Mandya, a Grade 12 student from KHPS Base PU College, Bangalore, passionate about Artificial Intelligence. I believe technology is most powerful when it's built with empathy — whether that's making legal aid more accessible, helping dancers perfect their posture through computer vision, or preserving digital legacies. Outside of code, I'm a Bharatanatyam dancer, an avid reader, and a track and field athlete. I'm driven by a deep curiosity about how AI can empower people, and I'm committed to building solutions that make a genuine difference.
+    Hi, I'm Avani Kanchi Mandya, a Grade 12 student from KHPS Base PU College, Bangalore, passionate about Artificial Intelligence. I believe technology is most powerful when it's built with empathy — whether that's making legal aid more accessible, helping dancers perfect their posture through computer vision, or preserving digital legacies.
+  </p>
+  <p class="hero-intro">
+    I've interned at a law firm building AI tools from scratch, published research on AI and water management, competed across four sports events on a single Sports Day, performed Bharatanatyam for elderly residents at an old age home, and visited ancient manuscript archives in rural Karnataka. Every one of those experiences has shaped how I think about technology — and why I build what I build.
+  </p>
+  <p class="hero-intro">
+    Outside of code, I'm a Bharatanatyam dancer, an avid reader, and a track and field athlete. I'm driven by a deep curiosity about how AI can empower people, and I'm committed to building solutions that make a genuine difference.
   </p>
 </section>
 
@@ -283,6 +289,9 @@ footer{
       From <strong>9th March to 17th April</strong>, I interned at a law firm where I independently designed and built an AI-powered legal tool from scratch. The project — <strong>Lawyer AI</strong> — is a tool that helps lawyers prepare and practice cases more effectively by simulating arguments, analysing case details, and providing intelligent legal insights.
     </p>
     <p class="entry-text">
+      This was not a shadow internship. I was given a genuine brief — understand how lawyers work, identify a gap, and build something useful — and I delivered. The experience pushed me to think like a product designer, not just a developer, and to understand that the best technology is invisible: it solves the problem without getting in the way of the person using it.
+    </p>
+    <p class="entry-text">
       This internship gave me my first real taste of building technology for a professional context. I had to understand the needs of practising lawyers, translate those needs into a working product, and iterate based on real feedback. That process taught me as much about communication and empathy as it did about code.
     </p>
     <ul class="meta-list">
@@ -297,10 +306,13 @@ footer{
         Walking into a law firm as a student and being trusted to build something real was both exciting and daunting. Lawyers think very differently from engineers — they care about precision, precedent, and persuasion. Understanding that mindset was the first challenge, and perhaps the most important one.
       </p>
       <p class="expanded-text">
-        I began by observing how lawyers at the firm prepared for cases — the research they did, the arguments they constructed, the ways they stress-tested their reasoning. From those observations, I designed Lawyer AI to simulate that process: feeding in case details, generating counter-arguments, and helping lawyers identify weaknesses in their own position before they faced them in court.
+        I began by observing how lawyers at the firm prepared for cases — the research they did, the arguments they constructed, the ways they stress-tested their reasoning. From those observations, I designed Lawyer AI to simulate that process: feeding in case details, generating counter-arguments, and helping lawyers identify weaknesses in their own position before they faced them in court. The tool allows a lawyer to enter the details of a case and receive a structured breakdown of possible counter-arguments, legal risks, and suggested research directions — like having a tireless junior colleague who never misses a detail.
       </p>
       <p class="expanded-text">
-        The internship also made me think about the broader opportunity for AI in law. Legal aid is expensive and inaccessible to millions of people. AI tools like Lawyer AI are a step toward changing that — and I hope to continue building in this space.
+        One of the most valuable lessons from this internship was about feedback loops. Early versions of the tool were technically correct but practically clunky — they produced output in formats that weren't suited to how lawyers actually read and reason. Iterating based on direct feedback from the lawyers at the firm taught me that the last 20% of a product — the polish, the interface, the workflow — is often what determines whether something gets used at all.
+      </p>
+      <p class="expanded-text">
+        The internship also made me think about the broader opportunity for AI in law. Legal aid is expensive and inaccessible to millions of people in India and around the world. A tool that helps a single overworked lawyer serve more clients, or helps a first-generation litigant understand their own case, is a meaningful step toward changing that — and I hope to continue building in this space.
       </p>
       <a class="more-link" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">Visit Lawyer AI ↗</a>
       <br><br>
@@ -326,37 +338,41 @@ footer{
       <div class="proj-num">01 / 04</div>
       <div class="proj-type">Social Deduction · AI Game</div>
       <div class="proj-name">Who Is The <em>Imposter?</em></div>
-      <div class="proj-desc">A multiplayer AI interrogation game where players question four AI suspects — one secretly guilty — to find the imposter. Each character responds dynamically to any question with a unique personality and backstory.</div>
+      <div class="proj-desc">A multiplayer AI interrogation game where players question four AI suspects — one secretly guilty — to find the imposter. Each suspect has a distinct personality, backstory, and way of speaking. Ask anything. The AI responds dynamically to every question — and the imposter lies convincingly. The challenge is in reading between the lines. Built with the Gemini API, the game generates coherent, in-character responses in real time, making each playthrough feel genuinely different.</div>
       <div class="tags">
         <span class="tag">Gemini API</span>
         <span class="tag">JavaScript</span>
         <span class="tag">Multiplayer</span>
+        <span class="tag">Game Design</span>
       </div>
       <div class="proj-arrow">↗</div>
     </a>
 
-    <a class="proj-item" href="https://avani-mandya.github.io/araimandi/" target="_blank">
+    <div class="proj-item">
       <div class="proj-num">02 / 04</div>
       <div class="proj-type">Computer Vision · Dance Tech</div>
       <div class="proj-name"><em>Araimandi</em> Posture Corrector</div>
-      <div class="proj-desc">A real-time posture correction tool using MediaPipe to detect and score the Araimandi stance — the foundational half-sit position in Bharatanatyam. Built to help dancers get objective feedback on their form.</div>
+      <div class="proj-desc">A real-time posture correction tool that uses MediaPipe's pose estimation to detect key body landmarks and score the Araimandi stance — the foundational half-sit position in Bharatanatyam. As a dancer myself, I built this because accurate posture feedback is incredibly hard to get in real time. The tool tracks hip, knee, and ankle angles live through your camera and gives immediate, objective feedback on whether your form is correct — something even a mirror can't fully do.</div>
       <div class="tags">
         <span class="tag">MediaPipe</span>
         <span class="tag">Python</span>
         <span class="tag">Computer Vision</span>
+        <span class="tag">Bharatanatyam</span>
       </div>
-      <div class="proj-arrow">↗</div>
-    </a>
+      <a href="https://avani-mandya.github.io/araimandi/" target="_blank" style="display:inline-block;margin-top:0.5rem;color:var(--black);font-size:0.9rem">Visit Project ↗</a><br>
+      <img src="cert-dance.jpg" alt="Dance Certificate" style="width:100%;object-fit:contain;background:#f9f9f9;max-height:400px;border:1px solid var(--border);margin-top:1rem" onerror="this.style.display='none'">
+    </div>
 
     <a class="proj-item" href="https://avani-mandya.github.io/lawyer.ai/" target="_blank">
       <div class="proj-num">03 / 04</div>
       <div class="proj-type">Legal AI · Case Preparation</div>
       <div class="proj-name">Lawyer <em>AI</em></div>
-      <div class="proj-desc">An AI-powered tool that helps lawyers prepare and practice cases by simulating arguments, analysing case details and providing legal insights. Built during my internship at a law firm.</div>
+      <div class="proj-desc">An AI-powered legal tool that helps lawyers prepare and practice cases more effectively. A lawyer inputs the details of a case and Lawyer AI generates structured counter-arguments, highlights legal risks, and suggests research directions — like a tireless junior colleague. Built entirely from scratch during my internship at a law firm, based on direct observation of how practising lawyers actually prepare. The goal: make every lawyer — especially those who work alone or with limited resources — better prepared.</div>
       <div class="tags">
         <span class="tag">AI</span>
         <span class="tag">Legal Tech</span>
         <span class="tag">JavaScript</span>
+        <span class="tag">Product Design</span>
       </div>
       <div class="proj-arrow">↗</div>
     </a>
@@ -365,11 +381,12 @@ footer{
       <div class="proj-num">04 / 04</div>
       <div class="proj-type">Digital Legacy · Privacy</div>
       <div class="proj-name">Digital <em>Executor</em></div>
-      <div class="proj-desc">A tool that helps individuals identify and delete old unwanted digital files and organise their online accounts and assets — so loved ones aren't left navigating the digital world alone.</div>
+      <div class="proj-desc">Most people have years of digital clutter they've never thought about — old accounts, forgotten files, emails, subscriptions. Digital Executor helps individuals take stock of their online presence: identify and clean up old unwanted files, organise accounts and digital assets, and prepare clear instructions for loved ones. It was built from a deeply human question — what happens to your digital life after you're gone? — and designed to be gentle, clear, and genuinely useful to anyone, not just the tech-savvy.</div>
       <div class="tags">
         <span class="tag">JavaScript</span>
         <span class="tag">Privacy</span>
         <span class="tag">Digital Legacy</span>
+        <span class="tag">UX Design</span>
       </div>
       <div class="proj-arrow">↗</div>
     </a>
@@ -395,6 +412,9 @@ footer{
     <p class="entry-text">
       The paper examines real-world applications of AI in monitoring water quality, predicting shortages, optimising distribution networks, and responding to environmental changes driven by climate change. It argues that AI is not just a technical tool, but a critical enabler of water security for millions of people around the world.
     </p>
+    <p class="entry-text">
+      This was my first experience writing an independent academic research paper — and it challenged me to think rigorously, structure arguments carefully, and engage with scientific literature in a way that school projects rarely demand. Submitting it to <strong>SSRN</strong>, one of the world's leading academic networks, was a milestone that reinforced my confidence as a researcher and as a writer.
+    </p>
     <ul class="meta-list">
       <li><strong>Topic</strong> AI in Water Resource Management</li>
       <li><strong>Platform</strong> SSRN — Social Science Research Network</li>
@@ -404,10 +424,16 @@ footer{
     <span class="more-link" onclick="toggleMore('research-more', this)">More &gt;&gt;</span>
     <div class="expanded" id="research-more">
       <p class="expanded-text">
-        The research began with a simple observation: despite being one of the most critical natural resources on earth, water is managed with surprisingly little data intelligence. Municipal water boards, agricultural planners, and environmental agencies often rely on outdated methods to track usage, predict demand, and respond to crises.
+        The research began with a simple observation: despite being one of the most critical natural resources on earth, water is managed with surprisingly little data intelligence. Municipal water boards, agricultural planners, and environmental agencies often rely on outdated methods to track usage, predict demand, and respond to crises. This gap between the urgency of water security and the sophistication of how it's managed is what I wanted to address.
       </p>
       <p class="expanded-text">
-        Artificial Intelligence changes this. Machine learning models can analyse vast datasets — satellite imagery, sensor networks, historical usage patterns — to predict where water stress will occur before it becomes a crisis. Predictive models can help farmers irrigate more efficiently, reducing waste. Anomaly detection algorithms can identify leaks in distribution networks instantly. And climate models powered by AI can help governments plan infrastructure decades in advance.
+        Artificial Intelligence changes this. Machine learning models can analyse vast datasets — satellite imagery, sensor networks, historical usage patterns — to predict where water stress will occur before it becomes a crisis. Predictive models can help farmers irrigate more efficiently, reducing waste by up to 30%. Anomaly detection algorithms can identify leaks in urban distribution networks the moment they occur, saving millions of litres that would otherwise be lost. And climate models powered by AI can help governments plan water infrastructure decades in advance.
+      </p>
+      <p class="expanded-text">
+        The paper also examines case studies from countries like Israel, Singapore, and parts of India where AI-driven water management has already been deployed at scale — and draws lessons for how similar approaches could be applied to regions that are most vulnerable to water scarcity, including large parts of Karnataka and the Deccan Plateau.
+      </p>
+      <p class="expanded-text">
+        Choosing to submit the paper to SSRN — the Social Science Research Network — was a deliberate decision. Water management is not a purely technical problem; it is also a governance, policy, and social problem. I wanted the research to be accessible to policymakers and social scientists, not just engineers. Writing for a cross-disciplinary audience pushed me to communicate technical ideas with clarity and precision.
       </p>
       <p class="expanded-text">
         Writing this paper deepened my conviction that AI is most powerful when it is applied to challenges that affect the most people. Water is life — and AI may be one of our most powerful tools for protecting it.
@@ -433,18 +459,23 @@ footer{
     <h3 class="entry-title">Bharatanatyam Performance <em>at an Old Age Home</em></h3>
     <img src="dance2.jpg" alt="With elderly residents at old age home" class="entry-img" style="object-position:center 40%" onerror="this.style.display='none'">
     <p class="entry-text">
-      Performed Bharatanatyam as part of a community service initiative at a local old age home, bringing joy to elderly residents through classical Indian dance. Bharatanatyam is more than a dance form to me — it is a language. Every gesture tells a story, and performing for the elderly reminded me that art has the power to transcend barriers of age, language and background.
+      Performed Bharatanatyam as part of a community service initiative at a local old age home, bringing joy to elderly residents through classical Indian dance. Bharatanatyam is more than a dance form to me — it is a language of devotion, emotion, and storytelling. Every gesture, every expression, every beat of the foot carries meaning passed down through generations. Performing for the elderly reminded me that art has the power to transcend barriers of age, language, and background in a way that few things can.
+    </p>
+    <p class="entry-text">
+      For many of the residents, this was the first live classical performance they had seen in years. Watching them respond — some swaying gently, some closing their eyes, some smiling at a familiar raga — was profoundly moving. It reminded me that dance is not just for the stage. It belongs to people, and to the spaces between people.
     </p>
     <span class="more-link" onclick="toggleMore('dance-more', this)">More &gt;&gt;</span>
     <div class="expanded" id="dance-more">
       <img src="dance.jpg" alt="Bharatanatyam performance on stage" class="expanded-img" style="object-fit:contain;background:#f9f9f9;max-height:600px" onerror="this.style.display='none'">
       <p class="expanded-text">
-        The residents gathered in the hall, many of them moved by the classical rhythms and the stories told through each mudra and expression. Some of them recognised the compositions — Bharatanatyam carries centuries of devotion and storytelling, and those in the audience who had grown up with classical music and dance felt an immediate connection.
+        The residents gathered in the hall as the music began — classical compositions that many of them had grown up with, now brought to life through Bharatanatyam. The stories told through each mudra and expression created an immediate and deep connection with the audience.
       </p>
       <p class="expanded-text">
-        Seeing their faces light up during the performance was one of the most moving experiences of my life. It reinforced my belief that community service doesn't always require resources — sometimes, the most meaningful gift you can give is your time, your art, and your presence. This experience also deepened my commitment to Bharatanatyam as a practice, knowing that it can bring such joy to others.
+        After the performance, several residents came to speak with me. One elderly woman held my hands and said that the music had taken her back to her childhood home. That moment has stayed with me ever since. It reinforced my belief that community service doesn't always require resources — sometimes, the most meaningful gift you can give is your time, your art, and your full presence.
       </p>
-      <img src="cert-dance.jpg" alt="Dance Certificate" class="expanded-img" style="object-fit:contain;background:#f9f9f9;max-height:600px" onerror="this.style.display='none'">
+      <p class="expanded-text">
+        This experience deepened my commitment to Bharatanatyam as a lifelong practice. Knowing that this art form can bring such comfort, joy, and connection to those who may feel isolated gives my practice a purpose that goes far beyond personal achievement.
+      </p>
       <span class="collapse-link" onclick="toggleMore('dance-more', this)">Show less</span>
     </div>
   </div>
@@ -456,11 +487,17 @@ footer{
     <p class="entry-text">
       Visited a government school in Melkote, a small town in rural Karnataka, to teach and interact with students. We donated books and learning materials to children who had very little access to them. The students were bright, curious, and eager to learn — and their enthusiasm was deeply humbling.
     </p>
+    <p class="entry-text">
+      Melkote is a town of great historical and cultural significance, and yet many of its young students grow up with limited access to quality educational resources. This visit was a reminder that curiosity is universal — what differs is the support and tools available to nurture it.
+    </p>
     <span class="more-link" onclick="toggleMore('melkote-more', this)">More &gt;&gt;</span>
     <div class="expanded" id="melkote-more">
       <img src="melkote2.jpg" alt="Inside classroom in Melkote" class="expanded-img" onerror="this.style.display='none'">
       <p class="expanded-text">
         Inside the classroom, I distributed books and spent time engaging with individual students — asking them about their interests, their dreams, their favourite subjects. The curiosity and warmth these children showed, despite having so few resources, left a lasting impression on me.
+      </p>
+      <p class="expanded-text">
+        One conversation stands out: a young girl who said she wanted to become a doctor. She had never used a computer. When I told her about how doctors in cities now use AI tools to detect diseases more accurately, her eyes lit up. That look — that spark of possibility — is something I carry with me.
       </p>
       <p class="expanded-text">
         This visit reminded me how much difference access to resources and a single encouraging interaction can make in a child's life. It also reinforced my conviction that technology — and the education it enables — is one of the most powerful tools for reducing inequality. Every child deserves access to the same opportunities, regardless of where they are born.
@@ -510,21 +547,27 @@ footer{
 
 <div class="section">
   <div class="entry">
-    <h3 class="entry-title">Sports Day — Javelin Throw, Shot Put <em>& Basketball</em></h3>
+    <h3 class="entry-title">Sports Day — Javelin, Shot Put, Basketball <em>& Badminton</em></h3>
     <img src="sports.jpg" alt="Sports Day" class="entry-img" style="object-position:center 20%;max-height:500px" onerror="this.style.display='none'">
     <p class="entry-text">
-      Competed in track and field events representing my college on Sports Day — including <strong>Javelin Throw</strong>, <strong>Shot Put</strong>, and <strong>Basketball</strong>. Athletics has always been a space where I push my physical and mental limits. The discipline required in sport — the focus under pressure, the persistence through failure, the commitment to showing up — has shaped how I approach every challenge in life.
+      Competed in multiple events representing my college on Sports Day — <strong>Javelin Throw</strong>, <strong>Shot Put</strong>, <strong>Basketball</strong>, and <strong>Badminton</strong>. Sports have always been a space where I push my physical and mental limits simultaneously. The discipline required in athletics — the focus under pressure, the persistence through failure, the commitment to showing up and giving everything — has profoundly shaped how I approach every challenge in my life, academic and otherwise.
+    </p>
+    <p class="entry-text">
+      Competing across four events in a single day demands not just physical fitness but mental versatility — switching between the explosive power of throwing events, the strategic thinking of badminton, and the team coordination of basketball. Each sport teaches something different, and together they have made me a more well-rounded person.
     </p>
     <span class="more-link" onclick="toggleMore('sports-more', this)">More &gt;&gt;</span>
     <div class="expanded" id="sports-more">
       <p class="expanded-text">
-        Track and field events like Javelin Throw and Shot Put require a combination of explosive strength, technical precision, and mental composure. Each throw is a moment of complete focus — every distraction disappears, and it's just you, the implement, and the arc of your movement through space.
+        Track and field events like <strong>Javelin Throw</strong> and <strong>Shot Put</strong> require a combination of explosive strength, technical precision, and mental composure. Each throw is a moment of complete focus — every distraction disappears, and it's just you, the implement, and the arc of your movement through space. Getting the technique right requires months of patient practice, and the satisfaction of a clean, powerful throw is unlike anything else.
       </p>
       <p class="expanded-text">
-        Basketball added a completely different dimension — teamwork, communication, and the ability to read and respond to others in real time. Playing as part of a team taught me skills that no classroom can fully replicate: trust, adaptability, and the ability to perform under collective pressure.
+        <strong>Badminton</strong> is a sport of lightning reflexes, court awareness, and tactical thinking. Every rally is a miniature chess match — you are constantly reading your opponent, placing your shots, and adjusting your strategy in real time. It has sharpened my ability to think fast and stay composed under pressure.
       </p>
       <p class="expanded-text">
-        Sports Day at KHPS Base PU College is one of the most anticipated events of the year. Competing for my college in multiple events was a source of tremendous pride, and the experience reinforced my belief that physical discipline and intellectual discipline are not separate — they are deeply connected.
+        <strong>Basketball</strong> added yet another dimension — pure teamwork, communication, and the ability to read and respond to others in real time. Playing as part of a team taught me skills that no classroom can fully replicate: trust, adaptability, and the ability to perform under collective pressure when the outcome depends on everyone.
+      </p>
+      <p class="expanded-text">
+        Sports Day at KHPS Base PU College is one of the most anticipated events of the year. Competing for my college across multiple events was a source of tremendous pride. These experiences reinforced my belief that physical discipline and intellectual discipline are not separate — they are deeply and powerfully connected.
       </p>
       <img src="cert-badminton.jpg" alt="Sports Certificate" class="expanded-img" style="object-fit:contain;background:#f9f9f9;max-height:600px" onerror="this.style.display='none'">
       <span class="collapse-link" onclick="toggleMore('sports-more', this)">Show less</span>
@@ -534,7 +577,10 @@ footer{
   <div class="entry">
     <h3 class="entry-title">Bharatanatyam — <em>A Lifelong Practice</em></h3>
     <p class="entry-text">
-      Bharatanatyam is one of India's oldest classical dance forms, with roots stretching back over two thousand years. I have been a dedicated student of Bharatanatyam for many years, training rigorously in technique, expression, and the rich storytelling tradition of the form.
+      Bharatanatyam is one of India's oldest classical dance forms, with roots stretching back over two thousand years. I have been a dedicated student of Bharatanatyam for many years, training rigorously in technique, expression, and the rich storytelling tradition of the form. Every class is a practice in patience — the forms are exacting, the footwork demanding, and mastery comes only through years of repetition and refinement.
+    </p>
+    <p class="entry-text">
+      Bharatanatyam has taught me more than dance. It has taught me the meaning of discipline — the kind that keeps you returning to the practice even when progress feels slow. It has given me stage presence, the ability to be fully present in the moment, and a deep respect for art forms that carry centuries of cultural wisdom within them.
     </p>
     <p class="entry-text">
       My passion for Bharatanatyam directly inspired one of my most personal projects — the <strong>Araimandi Posture Corrector</strong>, a computer vision tool built to help dancers perfect the foundational half-sit stance of the form. It was a way of bringing together two of my greatest passions: technology and dance.
@@ -559,6 +605,12 @@ footer{
     <p class="entry-text">
       Reading has been one of the constants of my life. From science and technology to philosophy, fiction and history — books have shaped my thinking, broadened my perspective, and fuelled the curiosity that drives everything I do. I believe that the best engineers, researchers and innovators are also deep readers — because great ideas rarely come from one domain alone.
     </p>
+    <p class="entry-text">
+      Reading across disciplines is something I do deliberately. A book on behavioural economics changes how I think about designing AI tools for non-technical users. A novel about grief makes me more thoughtful about building products like Digital Executor, which deals with deeply personal questions. History teaches me about the long arc of technology — how transformative tools have always been resisted before they were embraced, and why that matters for the work I want to do.
+    </p>
+    <p class="entry-text">
+      I am particularly drawn to books at the intersection of technology and society — exploring not just what AI can do, but what it should do, and who it should serve. That question — <em>technology for whom?</em> — sits at the heart of everything I build.
+    </p>
   </div>
 </div>
 
@@ -577,6 +629,9 @@ footer{
     <img src="sanskrit.jpg" alt="Inside the manuscript room" class="entry-img" style="object-position:center 35%" onerror="this.style.display='none'">
     <p class="entry-text">
       Visited the Sanskrit Academy in Melkote, Karnataka to explore how ancient manuscripts are digitally scanned and preserved for future generations. Inside the manuscript room, I saw centuries-old handwritten texts being carefully digitised — some of them fragile, some faded, all of them irreplaceable. It was a powerful reminder that technology is not just about the future; it is one of our greatest tools for protecting the past.
+    </p>
+    <p class="entry-text">
+      The Academy houses thousands of manuscripts spanning philosophy, mathematics, astronomy, poetry, and medicine — written in Sanskrit, Kannada, Tamil, and other classical languages. Seeing this wealth of knowledge, and understanding how vulnerable it is to the passage of time, gave me a new appreciation for the urgency of digital preservation.
     </p>
     <span class="more-link" onclick="toggleMore('sanskrit-more', this)">More &gt;&gt;</span>
     <div class="expanded" id="sanskrit-more">
