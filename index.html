@@ -104,6 +104,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 }
 .entry-text strong{color:var(--black)}
 
+
 .more-link{
   display:inline-block;
   font-size:0.85rem;color:var(--black);
@@ -128,7 +129,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
   border:1px solid var(--border);
 }
 .expanded-text{
-  font-size:1.2rem;color:var(--gray);line-height:1.9;
+  font-size:1.25rem;color:var(--gray);line-height:1.9;
   margin-bottom:1rem;
 }
 .expanded-text strong{color:var(--black)}
@@ -149,7 +150,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 
 /* META */
 .meta-list{margin:1rem 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px}
-.meta-list li{font-size:0.9rem;color:var(--gray);display:flex;gap:10px}
+.meta-list li{font-size:1.1rem;color:var(--gray);display:flex;gap:10px}
 .meta-list li strong{color:var(--black);min-width:100px}
 
 /* PAGE HEADER */
@@ -169,7 +170,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
   line-height:1.2;margin-bottom:0.75rem;
 }
 .page-header-title em{font-style:italic;font-weight:400}
-.page-header-desc{font-size:1rem;color:var(--gray);line-height:1.8;max-width:600px}
+.page-header-desc{font-size:1.25rem;color:var(--gray);line-height:1.9;max-width:680px}
 
 /* PROJECTS GRID */
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
@@ -179,7 +180,7 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .proj-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--black);margin-bottom:0.4rem;line-height:1.3}
 .proj-name em{font-style:italic;font-weight:400}
 .proj-type{font-size:0.72rem;color:var(--lgray);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.75rem}
-.proj-desc{font-size:0.88rem;color:var(--gray);line-height:1.7;margin-bottom:1rem}
+.proj-desc{font-size:1.25rem;color:var(--gray);line-height:1.9;margin-bottom:1rem}
 .proj-arrow{font-size:1rem;color:var(--lgray)}
 
 /* VOLUNTEER GRID */
@@ -188,11 +189,11 @@ hr{border:none;border-top:1px solid var(--border);margin:0}
 .vol-icon{font-size:1.5rem;margin-bottom:0.75rem}
 .vol-cat{font-size:0.7rem;color:var(--lgray);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.4rem}
 .vol-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--black);margin-bottom:0.5rem}
-.vol-desc{font-size:0.88rem;color:var(--gray);line-height:1.7}
+.vol-desc{font-size:1.25rem;color:var(--gray);line-height:1.9}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2rem}
-.contact-info p{font-size:1rem;color:var(--gray);line-height:1.9;margin-bottom:1.5rem}
+.contact-info p{font-size:1.25rem;color:var(--gray);line-height:1.9;margin-bottom:1.5rem}
 .contact-link{
   display:flex;flex-direction:column;
   padding:1rem 1.2rem;border:1px solid var(--border);
@@ -547,27 +548,33 @@ footer{
 
 <div class="section">
   <div class="entry">
-    <h3 class="entry-title">Sports Day — Javelin, Shot Put, Basketball <em>& Badminton</em></h3>
+    <h3 class="entry-title">Sports Day — <em>Competing Across Events</em></h3>
     <img src="sports.jpg" alt="Sports Day" class="entry-img" style="object-position:center 20%;max-height:500px" onerror="this.style.display='none'">
     <p class="entry-text">
-      Competed in multiple events representing my college on Sports Day — <strong>Javelin Throw</strong>, <strong>Shot Put</strong>, <strong>Basketball</strong>, and <strong>Badminton</strong>. Sports have always been a space where I push my physical and mental limits simultaneously. The discipline required in athletics — the focus under pressure, the persistence through failure, the commitment to showing up and giving everything — has profoundly shaped how I approach every challenge in my life, academic and otherwise.
+      I participated in a wide range of events on Sports Day, competing across track and field, racket sports, and team sports — including <strong>Javelin Throw</strong>, <strong>Shot Put</strong>, <strong>Basketball</strong>, and <strong>Badminton</strong>, among others. Sports Day at KHPS Base PU College is one of the most anticipated events of the year, and I threw myself into it fully — not just to compete, but to represent my college across as many events as I could.
     </p>
     <p class="entry-text">
-      Competing across four events in a single day demands not just physical fitness but mental versatility — switching between the explosive power of throwing events, the strategic thinking of badminton, and the team coordination of basketball. Each sport teaches something different, and together they have made me a more well-rounded person.
+      Taking part in so many different events on a single day is something I look back on with real pride. Each sport demands something different — explosive power, tactical thinking, team coordination, endurance — and moving between them all in one day pushed me in ways that no single discipline ever could. It also taught me that athletic versatility and mental versatility go hand in hand.
+    </p>
+    <p class="entry-text">
+      Sports have always been a space where I push my physical and mental limits simultaneously. The discipline required — the focus under pressure, the persistence through failure, the commitment to showing up and giving everything — has shaped how I approach every challenge in my life, academic and otherwise.
     </p>
     <span class="more-link" onclick="toggleMore('sports-more', this)">More &gt;&gt;</span>
     <div class="expanded" id="sports-more">
       <p class="expanded-text">
-        Track and field events like <strong>Javelin Throw</strong> and <strong>Shot Put</strong> require a combination of explosive strength, technical precision, and mental composure. Each throw is a moment of complete focus — every distraction disappears, and it's just you, the implement, and the arc of your movement through space. Getting the technique right requires months of patient practice, and the satisfaction of a clean, powerful throw is unlike anything else.
+        Track and field events like <strong>Javelin Throw</strong> and <strong>Shot Put</strong> require a combination of explosive strength, technical precision, and mental composure. Each throw is a moment of complete focus — every distraction disappears, and it's just you, the implement, and the arc of your movement through space. Getting the technique right requires patient practice over time, and the satisfaction of a clean, powerful throw is unlike anything else.
       </p>
       <p class="expanded-text">
         <strong>Badminton</strong> is a sport of lightning reflexes, court awareness, and tactical thinking. Every rally is a miniature chess match — you are constantly reading your opponent, placing your shots, and adjusting your strategy in real time. It has sharpened my ability to think fast and stay composed under pressure.
       </p>
       <p class="expanded-text">
-        <strong>Basketball</strong> added yet another dimension — pure teamwork, communication, and the ability to read and respond to others in real time. Playing as part of a team taught me skills that no classroom can fully replicate: trust, adaptability, and the ability to perform under collective pressure when the outcome depends on everyone.
+        <strong>Basketball</strong> added yet another dimension — pure teamwork, communication, and reading and responding to others in real time. Playing as part of a team taught me skills no classroom can fully replicate: trust, adaptability, and the ability to perform under collective pressure when the outcome depends on everyone.
       </p>
       <p class="expanded-text">
-        Sports Day at KHPS Base PU College is one of the most anticipated events of the year. Competing for my college across multiple events was a source of tremendous pride. These experiences reinforced my belief that physical discipline and intellectual discipline are not separate — they are deeply and powerfully connected.
+        What I love most about competing across so many events is that each one pulls something different out of you. There is no single "athlete" who naturally excels at all of them — you have to adapt, stay humble, and keep learning. That mindset — be willing to try many things, fail at some, and keep going — is something I carry into everything I do.
+      </p>
+      <p class="expanded-text">
+        Competing for my college across so many events was a source of tremendous pride. And volunteering to help organise the same event — making sure it ran smoothly for every other participant — gave me an appreciation for all the invisible work that makes a great day possible.
       </p>
       <img src="cert-badminton.jpg" alt="Sports Certificate" class="expanded-img" style="object-fit:contain;background:#f9f9f9;max-height:600px" onerror="this.style.display='none'">
       <span class="collapse-link" onclick="toggleMore('sports-more', this)">Show less</span>
